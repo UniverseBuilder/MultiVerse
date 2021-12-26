@@ -1,0 +1,19 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "scripts": {
+    "build": "cd packages/react-scripts && node bin/react-scripts.js build",
+    "changelog": "lerna-changelog",
+    "e2e": "tasks/e2e-simple.sh",
+    "postinstall": "npm run build:prod -w react-error-overlay",
+    "publish": "tasks/publish.sh",
+    "start": "cd packages/react-scripts && node bin/react-scripts.js start",
+    "alex": "alex .",
+    "test:integration": "jest test/integration",
+    "test": "cd packages/react-scripts && node bin/react-scripts.js test",
+    "format": "prettier --write 'packages/*/*.js' 'packages/*/!(node_modules)/**/*.js'"
+  }
+}
