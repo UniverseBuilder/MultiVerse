@@ -1,6 +1,6 @@
 {
   "name": "multiverses",
-  "private": true,
+  "private": false,
   "description": "A monorepo of multiple functions",
   "workspaces": [
     "packages/verse-*"
