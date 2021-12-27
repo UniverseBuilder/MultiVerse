@@ -1,19 +1,19 @@
 {
-  "name": "root",
+  "name": "multiverses",
   "private": true,
+  "description": "A monorepo of multiple functions",
+  "workspaces": [
+    "packages/verse-*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UniverseBuilder/MultiVerse.git"
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
   "devDependencies": {
     "lerna": "^4.0.0"
-  },
-  "scripts": {
-    "build": "cd packages/react-scripts && node bin/react-scripts.js build",
-    "changelog": "lerna-changelog",
-    "e2e": "tasks/e2e-simple.sh",
-    "postinstall": "npm run build:prod -w react-error-overlay",
-    "publish": "tasks/publish.sh",
-    "start": "cd packages/react-scripts && node bin/react-scripts.js start",
-    "alex": "alex .",
-    "test:integration": "jest test/integration",
-    "test": "cd packages/react-scripts && node bin/react-scripts.js test",
-    "format": "prettier --write 'packages/*/*.js' 'packages/*/!(node_modules)/**/*.js'"
   }
 }
