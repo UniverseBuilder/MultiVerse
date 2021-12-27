@@ -1,7 +1,9 @@
 {
   "name": "multiverses",
-  "private": false,
   "description": "A monorepo of multiple functions",
+  "publishConfig": {
+    "access": "public"
+  },
   "workspaces": [
     "packages/verse-*"
   ],
