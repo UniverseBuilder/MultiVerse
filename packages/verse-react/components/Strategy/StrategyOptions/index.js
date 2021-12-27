@@ -1,0 +1,1 @@
+export { StrategyOptions } from "./StrategyOptions";
