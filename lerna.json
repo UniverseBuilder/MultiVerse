@@ -15,5 +15,8 @@
       "tag: underlying tools": ":hammer: Underlying Tools"
     },
     "cacheDir": ".changelog"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
