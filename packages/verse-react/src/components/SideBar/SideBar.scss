@@ -1,0 +1,13 @@
+.side-links {
+  transition: all 0.1s ease-in;
+  padding-left: 1rem;
+  font-weight: 600;
+}
+.side-bar-wrapper {
+  height: calc(100vh - 60px);
+}
+.side-hover {
+  &:hover {
+    background-color: #E5F8FB;
+  }
+}
