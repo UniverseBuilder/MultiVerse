@@ -1,0 +1,15 @@
+@mixin theme($theme: $blue-1) {
+  background: $theme;
+  box-shadow: 0 0 1px rgba($theme, 0.25);
+  color: #fff;
+}
+
+.btn-info {
+  @include theme;
+}
+.btn-alert {
+  @include theme($theme: $orange-2);
+}
+.btn-success {
+  @include theme($theme: $orange-1);
+}

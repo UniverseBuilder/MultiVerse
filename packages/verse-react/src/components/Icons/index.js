@@ -1,1 +1,0 @@
-export { FAIcon } from "./FAIcon";

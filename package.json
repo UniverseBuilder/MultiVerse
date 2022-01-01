@@ -13,13 +13,16 @@
     "url": "https://github.com/UniverseBuilder/MultiVerse.git"
   },
   "scripts": {
-    "release": "cross-env HUSKY_BYPASS=true lerna publish"
+    "release": "cross-env HUSKY_BYPASS=true lerna publish",
+    "react": "yarn --cwd packages/verse-react start"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.0.0",
     "@commitlint/config-conventional": "^16.0.0",
+    "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.5.0",
+    "eslint-plugin-jsx-control-statements": "^2.2.1",
     "husky": "^7.0.4",
     "lerna": "^4.0.0"
   },

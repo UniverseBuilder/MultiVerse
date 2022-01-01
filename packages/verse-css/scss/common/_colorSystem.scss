@@ -1,0 +1,35 @@
+//WHITE_THEME
+$primary: $white; //
+$primaryVariant: $white;
+$secondary: $white;
+$secondaryVariant: $white;
+$background: $white;
+$surface: $white;
+$error: $white;
+$onPrimary: $white;
+$onSecondary: $white;
+$onBackground: $white;
+$onSurface: $white;
+$onError: $white;
+
+//Primary and secondary colors are applied sparingly to strategic parts of your UI. They are typically chosen for their ability to represent your brand.
+
+//Primary colors map to components and elements, like app bars and buttons. Secondary colors are most often used as accents on components, such as FABS and selection controls.
+
+//Finally, color variants can also be used to complement and provide accessible options for your primary and secondary colors.
+
+//Surface, background, and error colors
+
+//Surface, background, and error colors typically don’t represent brand. In general, they occupy the following areas of the UI: The elements in an app use...
+
+//Surface, background, and error colors typically don’t represent brand.
+
+//In general, they occupy the following areas of the UI:
+
+//Surface colors map to components such as cards, sheets, and menus
+//Background color is found behind scrollable content
+//Error color indicates errors in components, such as text fields
+
+
+//The colors in the “on” category are applied to text and icons (and sometimes surfaces) that appear in front of areas colored using: a primary color, secondary color, surface color, background color, or error color.
+//https://material.io/design/material-theming/implementing-your-theme.html#color

@@ -1,0 +1,14 @@
+{
+  "name": "@multiverses/verse-css",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "UniverseBuilder",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "sass": "^1.45.1",
+    "util": "^0.12.4"
+  }
+}

@@ -1,1 +1,0 @@
-export { ValueNumber } from "./ValueNumber";

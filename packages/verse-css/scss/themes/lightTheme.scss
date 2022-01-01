@@ -1,0 +1,20 @@
+@import '../common/variables';
+@import '../common/colors';
+
+//WHITE_THEME
+$primary: $teal300;
+$primaryVariant: $cyan300;
+$secondary: $teal400;
+$secondaryVariant: $cyan400;
+$background: $white;
+$surface: $white;
+$error: $red400;
+$onPrimary: $white;
+$onSecondary: $white;
+$onBackground: $black;
+$onSurface: $black;
+$onError: $white;
+
+.btn {
+  color: blue;
+}

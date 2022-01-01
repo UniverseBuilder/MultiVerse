@@ -1,16 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { FAIcon } from "../Icons";
-import "./Loading.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+// import { FAIcon } from "../Icons";
+import './Loading.scss';
 
-export const Loading = ({
-  children,
-  loading,
-  message,
-  resetLoading,
-  reload,
-}) => {
-  if (!loading && !message) {
+export const Loading = ({ children, loading, message, resetLoading }) => {
+  if (!loading && !message && resetLoading) {
     return <React.Fragment>{children}</React.Fragment>;
   }
   return (
@@ -21,14 +15,14 @@ export const Loading = ({
           <When condition={message}>
             <div className="message">
               {message}
-              <FAIcon
+              {/* <FAIcon
                 className="fa fa-close fa-1x close-icon icon-color"
                 onClick={resetLoading}
-              />
+              /> */}
             </div>
           </When>
           <When condition={loading}>
-            <FAIcon className="fa fa-cog fa-spin fa-2x spinner-icon icon-color" />
+            {/* <FAIcon className="fa fa-cog fa-spin fa-2x spinner-icon icon-color" /> */}
           </When>
         </Choose>
       </div>
@@ -41,13 +35,11 @@ Loading.propTypes = {
   loading: PropTypes.bool,
   message: PropTypes.string,
   resetLoading: PropTypes.func,
-  reload: PropTypes.func,
 };
 
 Loading.defaultProps = {
   children: null,
   loading: true,
-  message: "",
+  message: '',
   resetLoading: () => {},
-  reload: null,
 };
