@@ -1,0 +1,6 @@
+@mixin navbar {
+  background-color: $navbar-background-color;
+  box-shadow: $navbar-shadow;
+  height: $navbar-height;
+  padding: $navbar-padding-vertical $navbar-padding-horizontal;
+}

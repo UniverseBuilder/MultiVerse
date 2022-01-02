@@ -1,0 +1,23 @@
+@import './mixins/componentMixins';
+@import './mixins/flexMixins';
+@import './mixins/fontMixins';
+
+.navbar {
+  @include navbar;
+  @include flex;
+}
+
+.navbar-inner {
+  @include flex-justify(space-between);
+  width: 100%;
+}
+
+.navbar-items {
+  @include flex-items($align: center);
+}
+
+.navbar-title {
+  @include title;
+  flex: 1 1 auto;
+  overflow: hidden;
+}

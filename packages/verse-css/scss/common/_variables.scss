@@ -1,5 +1,19 @@
-$orange-1: #ff4500;
-$orange-2: #ff6347;
-$green-1: #43a047;
-$green-2: #43a047;
-$blue-1: #1a237e;
+$global-spacing: 1rem;
+$global-title-font-size: 17px;
+$global-text-font-size: 14px;
+$global-font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+  Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+  Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$global-line-height: 1.65;
+$spacing-vertical: $global-spacing;
+$spacing-horizontal: $global-spacing;
+$global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+$global-shadow-md: 0 5px 40px rgba(0, 0, 0, 0.2);
+$global-shadow-tl: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0;
+$navbar-height: 3.75rem;
+$navbar-shadow: $global-shadow-lw;
+$navbar-background-color: $background;
+$navbar-padding-vertical: calc($global-spacing * 0.5);
+$navbar-padding-horizontal: $global-spacing;
+$font-bold: 900;
+$font-md-bold: 800;

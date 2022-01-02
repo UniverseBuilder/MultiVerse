@@ -1,0 +1,17 @@
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-items($flex: 1, $align: unset, $justify: unset, $minwidth: 0) {
+  @include flex;
+  align-items: $align;
+  flex: $flex;
+  justify-content: $justify;
+  min-width: $minwidth;
+}
+
+@mixin flex-justify($justify: center) {
+  @include flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

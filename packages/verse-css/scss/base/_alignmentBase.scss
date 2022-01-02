@@ -1,0 +1,6 @@
+@import './mixins/alignmentMixins';
+
+.fixed-top {
+  @include sticky;
+  top: 0px;
+}

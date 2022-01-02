@@ -1,5 +1,26 @@
-@import '../common/variables';
+.dark-theme {
+  @import '../common/colors';
+  //DARK_THEME
+  $primary: $teal300;
+  $primaryVariant: $cyan300;
+  $secondary: $teal400;
+  $secondaryVariant: $cyan400;
+  $background: $gray900;
+  $surface: $black;
+  $error: $red400;
+  $onPrimary: $white;
+  $onSecondary: $white;
+  $onBackground: $white;
+  $onSurface: $black;
+  $onError: $white;
+  @import '../common/variables';
+  @import '../base/componentBase';
+  @import '../base/alignmentBase';
+  color: $onBackground;
+  font-size: $global-text-font-size;
+  font: calc($global-text-font-size/$global-line-height) $global-font-family;
 
-.btn {
-  color: red;
+  .btn {
+    color: red;
+  }
 }
