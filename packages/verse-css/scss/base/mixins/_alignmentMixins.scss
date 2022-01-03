@@ -2,3 +2,29 @@
   position: sticky;
   z-index: $zIndex;
 }
+
+@mixin spacing-loop($className, $styleName) {
+  $max: 48;
+  $offset: 4;
+  $unit: 'px'; // Feel free to change the unit.
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
+
+@mixin sizing-loop($className, $styleName) {
+  $max: 400;
+  $offset: 40;
+  $unit: 'px'; // Feel free to change the unit.
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}

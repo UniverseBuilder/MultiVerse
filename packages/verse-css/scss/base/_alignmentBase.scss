@@ -4,3 +4,21 @@
   @include sticky;
   top: 0px;
 }
+
+// Margins
+@include spacing-loop('.m-t-', 'margin-top');
+@include spacing-loop('.m-r-', 'margin-right');
+@include spacing-loop('.m-b-', 'margin-bottom');
+@include spacing-loop('.m-l-', 'margin-left');
+@include spacing-loop('.m-x-', 'margin');
+
+// Paddings
+@include spacing-loop('.p-t-', 'padding-top');
+@include spacing-loop('.p-r-', 'padding-right');
+@include spacing-loop('.p-b-', 'padding-bottom');
+@include spacing-loop('.p-l-', 'padding-left');
+@include spacing-loop('.p-x-', 'padding');
+
+// Width, Height
+@include sizing-loop('.w-', 'width');
+@include sizing-loop('.h-', 'height');

@@ -16,8 +16,20 @@
   @include flex-items($align: center);
 }
 
-.navbar-title {
+.navitem {
   @include title;
   flex: 1 1 auto;
   overflow: hidden;
+}
+
+.navitem-title {
+  @include title;
+}
+
+.navitem-right {
+  @include flex-items($align: center, $justify: flex-end, $flex: 0 0 auto);
+}
+
+.sidenav {
+  border-right: $global-border-width $global-border-style $global-border-color;
 }

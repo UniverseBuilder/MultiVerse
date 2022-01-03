@@ -5,6 +5,9 @@ $global-font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
   Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica,
   Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 $global-line-height: 1.65;
+$global-border-width: 1px;
+$global-border-style: solid;
+$global-border-color: $gray300;
 $spacing-vertical: $global-spacing;
 $spacing-horizontal: $global-spacing;
 $global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.1);

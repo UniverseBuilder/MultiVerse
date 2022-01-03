@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 export const preferencesSlice = createSlice({
   name: 'preferences',
   initialState: {
-    theme: 'dark',
+    theme: 'light',
   },
   reducers: {
     setTheme: (state, action) => {

@@ -16,9 +16,10 @@
   @import '../common/variables';
   @import '../base/componentBase';
   @import '../base/alignmentBase';
+  height: 100%;
   color: $onBackground;
-  font-size: $global-text-font-size;
-  font: calc($global-text-font-size/$global-line-height) $global-font-family;
+  background-color: $background;
+  font: $global-text-font-size $global-font-family;
 
   .btn {
     color: red;

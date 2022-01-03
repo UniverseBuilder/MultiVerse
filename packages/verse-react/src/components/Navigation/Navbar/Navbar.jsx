@@ -1,15 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export const Navbar = () => {
+export const Navbar = ({ className, children }) => {
   return (
-    <nav className="navbar fixed-top">
+    <nav className={className}>
       <div className="navbar-inner">
-        <div className="navbar-items">
-          <div className="navbar-title">
-            <b>Verse React</b>
-          </div>
-        </div>
+        <div className="navbar-items">{children}</div>
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+};
+
+Navbar.defaultProps = {
+  children: null,
+  className: 'navbar fixed-top',
 };
