@@ -1,0 +1,1 @@
+export { RichTextEditorDocs } from './RichTextEditorDocs';

@@ -1,0 +1,1 @@
+export { AlertDocs } from './AlertDocs';

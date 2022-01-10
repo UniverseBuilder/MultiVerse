@@ -1,0 +1,1 @@
+export { BadgeDocs } from './BadgeDocs';

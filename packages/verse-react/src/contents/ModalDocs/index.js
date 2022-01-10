@@ -1,0 +1,1 @@
+export { ModalDocs } from './ModalDocs';

@@ -7,7 +7,7 @@ export const ButtonDocs = () => {
       <div className="p-l-4">
         <b>Basic Button</b>
         <span className="m-x-16">
-          <Button>Primary</Button>
+          <Button className="btn-flat">Primary</Button>
         </span>
       </div>
       <div className="p-l-4">

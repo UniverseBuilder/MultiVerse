@@ -47,3 +47,7 @@
 .btn-flat {
   @include button($flat: true);
 }
+
+.btn-block {
+  @include button($flat: true, $transform: false, $display: block);
+}

@@ -45,7 +45,28 @@ function App() {
       </Navbar>
       <div className="flex">
         <div className="flex-25">
-          <SideNavigation contents={['Button']} />
+          <SideNavigation
+            contents={[
+              'Accordion',
+              'Alert',
+              'Badge',
+              'Button',
+              'ButtonGroup',
+              'Card',
+              'Carousel',
+              'Datagrid',
+              'Form',
+              'Icons',
+              'Image',
+              'List',
+              'Loading',
+              'Modal',
+              'Overlay',
+              'RenderHTML',
+              'RichTextEditor',
+              'Tabs',
+            ]}
+          />
         </div>
         <div className="flex-75">
           <Contents />

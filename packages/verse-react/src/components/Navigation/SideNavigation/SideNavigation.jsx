@@ -5,17 +5,15 @@ import { NavLink } from 'react-router-dom';
 export const SideNavigation = ({ contents }) => {
   return (
     <div className="sidenav h-100VH">
-      <For each="content" of={contents} index="idx">
-        <div key={idx}>
-          <NavLink
-            to="/"
-            className="sidenavlink"
-            activeClassName="active-sidenavlink"
-          >
-            {content}
-          </NavLink>
-        </div>
-      </For>
+      <div>
+        <For each="content" of={contents} index="idx">
+          <div key={idx}>
+            <NavLink to={content} className="btn-block secondary">
+              {content}
+            </NavLink>
+          </div>
+        </For>
+      </div>
     </div>
   );
 };
