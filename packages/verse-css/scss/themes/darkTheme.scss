@@ -21,7 +21,13 @@
   background-color: $background;
   font: $global-text-font-size $global-font-family;
 
-  .btn {
-    color: red;
+  .primary {
+    background-color: $white;
+    color: $orange800;
+  }
+
+  .success {
+    background-color: $white;
+    color: $green800;
   }
 }

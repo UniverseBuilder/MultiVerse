@@ -4,7 +4,7 @@ import { Loading } from "../Loading";
 
 export const Button = ({ onClick, children, className, loading }) => {
   return (
-    <button className={`btn ${className}`} onClick={onClick}>
+    <button className={className} onClick={onClick}>
       <Loading loading={loading}>{children}</Loading>
     </button>
   );
@@ -20,6 +20,6 @@ Button.propTypes = {
 Button.defaultProps = {
   children: null,
   onClick: () => null,
-  className: "btn-primary",
+  className: "btn",
   loading: false,
 };

@@ -3,3 +3,24 @@
   text-overflow: ellipsis;
   font-size: $global-title-font-size;
 }
+
+@mixin variants(
+  $variant-name,
+  $bg-color,
+  $color,
+  $textDecor: none,
+  $outline: false
+) {
+  #{$variant-name} {
+    background-color: $bg-color;
+    color: $color;
+    text-decoration: $textDecor;
+    @if $outline {
+      border: 1px solid $color;
+      &:hover {
+        background-color: $color;
+        color: $bg-color;
+      }
+    }
+  }
+}

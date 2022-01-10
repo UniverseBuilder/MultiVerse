@@ -2,6 +2,7 @@
   "plugins": ["react", "jsx-control-statements"],
   "extends": [
     "eslint:recommended",
+    "plugin:react/recommended",
     "plugin:jsx-control-statements/recommended"
   ],
   "rules": {
@@ -17,7 +18,11 @@
     "ecmaFeatures": {
       "jsx": true,
       "modules": true
-    }
+    },
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    },
+    "requireConfigFile": false
   },
   "env": {
     "browser": true,

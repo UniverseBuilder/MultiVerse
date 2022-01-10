@@ -2,6 +2,12 @@
 @import './mixins/flexMixins';
 @import './mixins/fontMixins';
 
+.flex {
+  @include flex;
+}
+
+@include flex-loop('.flex-', 'flex');
+
 .navbar {
   @include navbar;
   @include flex;
@@ -32,4 +38,12 @@
 
 .sidenav {
   border-right: $global-border-width $global-border-style $global-border-color;
+}
+
+.btn {
+  @include button();
+}
+
+.btn-flat {
+  @include button($flat: true);
 }

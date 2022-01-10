@@ -4,6 +4,7 @@ import { themes } from '@multiverses/verse-css/scss';
 import { Navbar } from 'components/Navigation/Navbar';
 import { SideNavigation } from 'components/Navigation/SideNavigation';
 import { Button } from 'components/Button';
+import { Contents } from 'contents';
 
 function App() {
   const { theme, actions } = usePreferences();
@@ -42,7 +43,14 @@ function App() {
           </React.Fragment>
         </Navbar.NavItemRight>
       </Navbar>
-      <SideNavigation content={{ components: ['Button'] }} />
+      <div className="flex">
+        <div className="flex-25">
+          <SideNavigation contents={['Button']} />
+        </div>
+        <div className="flex-75">
+          <Contents />
+        </div>
+      </div>
     </div>
   );
 }

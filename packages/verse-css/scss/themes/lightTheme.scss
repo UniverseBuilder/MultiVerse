@@ -21,7 +21,95 @@
   background-color: $background;
   font: $global-text-font-size $global-font-family;
 
-  .btn {
-    color: blue;
-  }
+  @include variants(
+    $variant-name: '.primary',
+    $bg-color: $blue700,
+    $color: $white
+  );
+
+  @include variants(
+    $variant-name: '.primary-outline',
+    $bg-color: $white,
+    $color: $blue700,
+    $outline: true
+  );
+
+  @include variants(
+    $variant-name: '.secondary',
+    $bg-color: $bluegray500,
+    $color: $white
+  );
+
+  @include variants(
+    $variant-name: '.secondary-outline',
+    $bg-color: $white,
+    $color: $bluegray500,
+    $outline: true
+  );
+
+  @include variants(
+    $variant-name: '.success',
+    $bg-color: $teal500,
+    $color: $white
+  );
+
+  @include variants(
+    $variant-name: '.success-outline',
+    $bg-color: $white,
+    $color: $teal500,
+    $outline: true
+  );
+
+  @include variants(
+    $variant-name: '.warning',
+    $bg-color: $yellow600,
+    $color: $black
+  );
+
+  @include variants(
+    $variant-name: '.warning-outline',
+    $bg-color: $white,
+    $color: $yellow600,
+    $outline: true
+  );
+
+  @include variants(
+    $variant-name: '.error',
+    $bg-color: $deeporangeA700,
+    $color: $white
+  );
+
+  @include variants(
+    $variant-name: '.error-outline',
+    $bg-color: $white,
+    $color: $deeporangeA700,
+    $outline: true
+  );
+
+  @include variants(
+    $variant-name: '.info',
+    $bg-color: $lightblue500,
+    $color: $white
+  );
+
+  @include variants(
+    $variant-name: '.info-outline',
+    $bg-color: $white,
+    $color: $lightblue500,
+    $outline: true
+  );
+
+  @include variants(
+    $variant-name: '.link',
+    $bg-color: $white,
+    $color: $lightblue600,
+    $textDecor: underline
+  );
+  
+  @include variants(
+    $variant-name: '.link-outline',
+    $bg-color: $lightblue600,
+    $color: $white,
+    $outline: true
+  );
 }
