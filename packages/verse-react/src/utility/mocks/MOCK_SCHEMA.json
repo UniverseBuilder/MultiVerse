@@ -3,20 +3,20 @@
   "fields": [
     {
       "dataKey": "id",
-      "label": "S.No",
+      "labelName": "S.No",
       "title": "Serial No",
-      "width": 10,
+      "width": "10%",
       "sort": false
     },
     {
       "dataKey": "first_name",
-      "label": "First Name",
-      "width": 20,
+      "labelName": "First Name",
+      "width": "10%",
       "fixed": true
     },
-    { "dataKey": "last_name", "label": "Last Name", "width": 20 },
-    { "dataKey": "email", "label": "E-mail", "width": 40 },
-    { "dataKey": "gender", "label": "Gender", "width": 10 }
+    { "dataKey": "last_name", "labelName": "Last Name", "width": "10%" },
+    { "dataKey": "email", "labelName": "E-mail", "width": "10%" },
+    { "dataKey": "gender", "labelName": "Gender", "width": "10%" }
   ],
   "enhancers": [
     {

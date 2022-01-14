@@ -1,4 +1,4 @@
-/* eslint-disable jsx-control-statements/jsx-jcs-no-undef */
+/* eslint-disable */
 /** @flow */
 
 import type {

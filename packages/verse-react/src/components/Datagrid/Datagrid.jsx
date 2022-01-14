@@ -5,6 +5,7 @@ import { TableRow } from './TableRow';
 import { TableFooter } from './TableFooter';
 import { rowRenderer } from './helpers';
 import * as domHelpers from 'dom-helpers';
+import { DataTable } from '../legacy/components/DataTable';
 
 export const Datagrid = ({ schema, data }) => {
   console.log('$$$', domHelpers);
@@ -12,6 +13,12 @@ export const Datagrid = ({ schema, data }) => {
   console.log(domHelpers.scrollbarSize(true));
   return (
     <div className="">
+      <DataTable
+        title="MOCK DATA"
+        columnHeader={schema.fields}
+        columnData={data}
+        isCustomizable={false}
+      />
       <table>
         <TableHeader fields={schema.fields} />
         <TableRow fields={schema.fields} data={data} />
