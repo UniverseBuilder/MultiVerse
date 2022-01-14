@@ -1,0 +1,36 @@
+{
+  "title": "Mock Table",
+  "fields": [
+    {
+      "dataKey": "id",
+      "label": "S.No",
+      "title": "Serial No",
+      "width": 10,
+      "sort": false
+    },
+    {
+      "dataKey": "first_name",
+      "label": "First Name",
+      "width": 20,
+      "fixed": true
+    },
+    { "dataKey": "last_name", "label": "Last Name", "width": 20 },
+    { "dataKey": "email", "label": "E-mail", "width": 40 },
+    { "dataKey": "gender", "label": "Gender", "width": 10 }
+  ],
+  "enhancers": [
+    {
+      "topRight": "TOP_RIGHT"
+    },
+    {
+      "topLeft": "TOP_LEFT"
+    },
+    {
+      "bottomRight": "BOTTOM_RIGHT"
+    },
+    {
+      "bottomLeft": "BOTTOM_LEFT"
+    }
+  ],
+  "titletip": true
+}

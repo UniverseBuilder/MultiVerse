@@ -1,0 +1,25 @@
+.powerFilter {
+  transition: all 0.2s ease-in;
+  height: 40px;
+  overflow-y: auto;
+  width: 100%;
+  background-color: #e1f5fe;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+.inputFilter {
+  height: 40px;
+}
+.close-custom2 {
+  position: absolute;
+  cursor: pointer;
+  font-size: 1.2em !important;
+  right: 7px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  &:hover {
+    font-weight: 700;
+    font-size: 16px;
+  }
+}

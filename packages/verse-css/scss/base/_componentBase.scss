@@ -51,3 +51,8 @@
 .btn-block {
   @include button($flat: true, $transform: false, $display: block);
 }
+
+.table {
+  height: 400px;
+  overflow-y: scroll;
+}
