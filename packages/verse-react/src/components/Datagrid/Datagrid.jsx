@@ -1,16 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TableHeader } from './TableHeader';
-import { TableRow } from './TableRow';
-import { TableFooter } from './TableFooter';
-import { rowRenderer } from './helpers';
-import * as domHelpers from 'dom-helpers';
 import { DataTable } from '../legacy/components/DataTable';
 
 export const Datagrid = ({ schema, data }) => {
-  console.log('$$$', domHelpers);
-  console.log(domHelpers.isVisible(document.querySelector('#root')));
-  console.log(domHelpers.scrollbarSize(true));
   return (
     <div className="">
       <DataTable
@@ -19,11 +11,6 @@ export const Datagrid = ({ schema, data }) => {
         columnData={data}
         isCustomizable={false}
       />
-      <table>
-        <TableHeader fields={schema.fields} />
-        <TableRow fields={schema.fields} data={data} />
-        <TableFooter />
-      </table>
     </div>
   );
 };
@@ -36,11 +23,9 @@ Datagrid.propTypes = {
   dataKey: PropTypes.string,
   labelKey: PropTypes.string,
   noDataText: PropTypes.string,
-  rowRenderer: PropTypes.func,
 };
 
 Datagrid.defaultProps = {
   data: [],
   noDataText: 'There are no rows',
-  rowRenderer: rowRenderer,
 };
