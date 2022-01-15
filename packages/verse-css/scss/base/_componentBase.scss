@@ -40,11 +40,13 @@
   border-right: $global-border-width $global-border-style $global-border-color;
 }
 
-.btn {
+.btn,
+.alert {
   @include button();
 }
 
-.btn-flat {
+.btn-flat,
+.alert-flat {
   @include button($flat: true);
 }
 

@@ -21,7 +21,7 @@ import { TabsDocs } from './TabsDocs';
 export const Contents = () => {
   return (
     <Routes>
-      <Route path="/" element={<DatagridDocs />} />
+      <Route path="/" element={<AlertDocs />} />
       <Route path="/Accordion" element={<AccordionDocs />} />
       <Route path="/Alert" element={<AlertDocs />} />
       <Route path="/Badge" element={<BadgeDocs />} />
