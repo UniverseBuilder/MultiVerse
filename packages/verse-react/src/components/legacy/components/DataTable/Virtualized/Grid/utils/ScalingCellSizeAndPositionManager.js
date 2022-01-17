@@ -1,4 +1,4 @@
-/** @flow */
+/* eslint-disable */
 
 import type {Alignment, CellSizeGetter, VisibleCellRange} from '../types';
 

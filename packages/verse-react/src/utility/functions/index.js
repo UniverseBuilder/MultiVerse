@@ -1,0 +1,1 @@
+export { byString } from './byString';

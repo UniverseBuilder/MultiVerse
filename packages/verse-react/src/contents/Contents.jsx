@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { Route, Routes } from 'react-router-dom';
+
 import { AccordionDocs } from './AccordionDocs';
 import { AlertDocs } from './AlertDocs';
 import { BadgeDocs } from './BadgeDocs';
@@ -21,7 +23,7 @@ import { TabsDocs } from './TabsDocs';
 export const Contents = () => {
   return (
     <Routes>
-      <Route path="/" element={<AlertDocs />} />
+      <Route path="/" element={<FormDocs />} />
       <Route path="/Accordion" element={<AccordionDocs />} />
       <Route path="/Alert" element={<AlertDocs />} />
       <Route path="/Badge" element={<BadgeDocs />} />

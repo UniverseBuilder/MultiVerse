@@ -1,5 +1,7 @@
 import React from "react";
+
 import PropTypes from "prop-types";
+
 import { Loading } from "../Loading";
 
 export const Button = ({ onClick, children, className, loading }) => {

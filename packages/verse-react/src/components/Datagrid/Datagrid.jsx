@@ -1,5 +1,7 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
+
 import { DataTable } from '../legacy/components/DataTable';
 
 export const Datagrid = ({ schema, data }) => {

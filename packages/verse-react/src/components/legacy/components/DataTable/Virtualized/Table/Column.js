@@ -1,9 +1,11 @@
-/** @flow */
-import PropTypes from 'prop-types';
+/* eslint-disable */
 import * as React from 'react';
-import defaultHeaderRenderer from './defaultHeaderRenderer';
-import defaultCellRenderer from './defaultCellRenderer';
+
+import PropTypes from 'prop-types';
+
 import defaultCellDataGetter from './defaultCellDataGetter';
+import defaultCellRenderer from './defaultCellRenderer';
+import defaultHeaderRenderer from './defaultHeaderRenderer';
 import SortDirection from './SortDirection';
 
 /**

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const preferencesSlice = createSlice({
   name: 'preferences',

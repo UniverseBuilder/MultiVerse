@@ -1,7 +1,9 @@
 import React from "react";
+
 import PropTypes from "prop-types";
-import { FAIcon } from "../../../Icons";
+
 import { InputBar } from "../../../Form/InputBar";
+import { FAIcon } from "../../../Icons";
 import "./PowerFilter.scss";
 
 export const PowerFilter = ({ applyFilter, onClose }) => {

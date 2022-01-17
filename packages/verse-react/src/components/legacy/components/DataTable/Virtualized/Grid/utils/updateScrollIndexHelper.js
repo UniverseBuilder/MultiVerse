@@ -1,4 +1,4 @@
-// @flow
+/* eslint-disable */
 
 import type {Alignment, CellSize} from '../types';
 

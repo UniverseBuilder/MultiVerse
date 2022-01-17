@@ -6,10 +6,9 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'utility/hooks';
 import { valueChange } from 'utility/redux/slices/forms/formSlice';
 
-export const TextArea = ({
+export const Checkbox = ({
   id,
   model,
-  type,
   className,
   placeholder,
   onChange,
@@ -21,26 +20,20 @@ export const TextArea = ({
   const dispatch = useDispatch();
 
   const handleChange = e => {
-    if (type === 'number') {
-      dispatch(valueChange({ model, value: Number(e.target.value) }));
-    } else {
-      dispatch(valueChange({ model, value: e.target.value }));
-    }
+    dispatch(valueChange({ model, value: e.target.checked }));
     onChange();
   };
 
   useEffect(() => {
-    if (defaultValue && value !== defaultValue) {
-      handleChange({ target: { value: defaultValue } });
-    }
+    handleChange({ target: { checked: defaultValue } });
   }, [defaultValue]);
 
   return (
-    <textarea
+    <input
       id={id}
-      aria-describedby="textarea"
+      aria-describedby="input"
       onChange={handleChange}
-      type={type}
+      type="checkbox"
       className={className}
       placeholder={placeholder}
       value={value}
@@ -50,7 +43,7 @@ export const TextArea = ({
   );
 };
 
-TextArea.propTypes = {
+Checkbox.propTypes = {
   model: PropTypes.string,
   className: PropTypes.string,
   disabled: PropTypes.bool,
@@ -60,13 +53,13 @@ TextArea.propTypes = {
   onChange: PropTypes.func,
   id: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  defaultValue: PropTypes.oneOfType([PropTypes.bool]),
 };
 
-TextArea.defaultProps = {
-  id: 'textarea-element',
+Checkbox.defaultProps = {
+  id: 'datepicker-element',
   onChange: () => {},
   value: '',
-  defaultValue: '',
+  defaultValue: false,
   className: '',
 };

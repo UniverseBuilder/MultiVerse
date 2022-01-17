@@ -1,8 +1,9 @@
 {
-  "plugins": ["react", "jsx-control-statements"],
+  "plugins": ["react", "import", "jsx-control-statements"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:import/recommended",
     "plugin:jsx-control-statements/recommended"
   ],
   "rules": {
@@ -10,7 +11,38 @@
     // "no-undef": [2, { "allowGlobals": true, "typeof": true }],
     "no-console": "off",
     "strict": ["error", "global"],
-    "curly": "warn"
+    "curly": "warn",
+    "@typescript-eslint/semi": "off",
+    "no-unexpected-multiline": "error",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "single", "multiple"],
+        "allowSeparatedGroups": false
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   },
   "parser": "@babel/eslint-parser",
   "parserOptions": {
@@ -42,5 +74,13 @@
     "Set": false,
     "prompt": false,
     "navigator": false
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
   }
 }

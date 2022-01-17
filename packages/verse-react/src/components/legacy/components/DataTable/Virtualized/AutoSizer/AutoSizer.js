@@ -1,7 +1,8 @@
-/* eslint-disable jsx-control-statements/jsx-jcs-no-undef */
+/* eslint-disable */
 /** @flow */
 
 import * as React from 'react';
+
 import createDetectElementResize from '../vendor/detectElementResize';
 
 type Size = {
