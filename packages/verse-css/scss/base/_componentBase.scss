@@ -58,3 +58,37 @@
   height: 400px;
   overflow-y: scroll;
 }
+
+.form {
+  @include flex-justify(space-between);
+}
+.form-label {
+  font-weight: $font-md;
+  font-size: calc($global-font-size + 0.04rem);
+  width: 100%;
+}
+
+.form-input {
+  display: block;
+  margin-top: 0.25rem;
+  padding: $form-padding;
+  font-size: $global-font-size;
+  transition: $form-transition;
+  border-radius: $form-border-radius;
+  width: 100%;
+  font-family: inherit;
+  font-weight: inherit;
+}
+.form-select {
+  @extend .form-input;
+}
+.form-textarea {
+  @extend .form-input;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.radio {
+  @include button($transform: false);
+  border-radius: 0px;
+}

@@ -68,5 +68,5 @@ TextArea.defaultProps = {
   onChange: () => {},
   value: '',
   defaultValue: '',
-  className: '',
+  className: 'form-textarea secondary-form',
 };

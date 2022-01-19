@@ -2,15 +2,15 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-export const Form = ({ children, className }) => {
+export const Wrapper = ({ children, className }) => {
   return <div className={className}>{children}</div>;
 };
 
-Form.propTypes = {
+Wrapper.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
 };
 
-Form.defaultProps = {
-  className: 'form',
+Wrapper.defaultProps = {
+  className: '',
 };

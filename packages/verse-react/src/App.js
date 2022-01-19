@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
-import { usePreferences } from 'utility/redux/slices/preferences/preferencesSlice';
+
 import { themes } from '@multiverses/verse-css/scss';
+
+import { Button } from 'components/Button';
 import { Navbar } from 'components/Navigation/Navbar';
 import { SideNavigation } from 'components/Navigation/SideNavigation';
-import { Button } from 'components/Button';
 import { Contents } from 'contents';
+import { usePreferences } from 'utility/redux/slices/preferences/preferencesSlice';
 
 function App() {
   const { theme, actions } = usePreferences();

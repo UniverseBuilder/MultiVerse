@@ -9,7 +9,8 @@
   $bg-color,
   $color,
   $textDecor: none,
-  $outline: false
+  $outline: false,
+  $form: false
 ) {
   #{$variant-name} {
     background-color: $bg-color;
@@ -18,8 +19,22 @@
     @if $outline {
       border: 1px solid $color;
       &:hover {
-        background-color: $color;
-        color: $bg-color;
+        background-color: lighten($color, 51%);
+        color: $color;
+      }
+    }
+    @if $form {
+      background-color: none;
+      border: 2px solid lighten($color, 5%);
+      color: $black;
+      &:hover,
+      &:active,
+      &:focus {
+        outline: none;
+        border: 2px solid darken($color, 5%);
+      }
+      &:focus::placeholder {
+        color: transparent;
       }
     }
   }

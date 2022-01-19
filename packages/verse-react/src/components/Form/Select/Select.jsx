@@ -16,7 +16,7 @@ export const Select = ({
   defaultValue,
   labelKey,
   valueKey,
-  style,
+  className,
 }) => {
   const value = useForm(model);
   const dispatch = useDispatch();
@@ -34,13 +34,12 @@ export const Select = ({
 
   return (
     <select
-      className="form-control"
+      className={className}
       id={id}
       value={value}
       onChange={handleChange}
       placeholder={placeholder}
       disabled={disabled}
-      style={style}
     >
       <option value="" key="">
         {placeholder}
@@ -68,6 +67,7 @@ export const Select = ({
 Select.propTypes = {
   id: PropTypes.string,
   labelName: PropTypes.string,
+  className: PropTypes.string,
   defaultValue: PropTypes.string,
   model: PropTypes.string,
   options: PropTypes.any,
@@ -77,7 +77,6 @@ Select.propTypes = {
   disabled: PropTypes.bool,
   labelKey: PropTypes.string,
   valueKey: PropTypes.string,
-  style: PropTypes.shape({}),
 };
 
 Select.defaultProps = {
@@ -85,5 +84,5 @@ Select.defaultProps = {
   model: null,
   disabled: false,
   onChange: () => null,
-  style: {},
+  className: 'form-select secondary-form',
 };

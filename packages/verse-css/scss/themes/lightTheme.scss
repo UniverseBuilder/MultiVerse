@@ -21,6 +21,14 @@
   background-color: $background;
   font: $global-text-font-size $global-font-family;
 
+  .inline {
+    display: inline;
+  }
+
+  .block {
+    display: block;
+  }
+
   @include variants(
     $variant-name: '.primary',
     $bg-color: $blue700,
@@ -32,6 +40,13 @@
     $bg-color: $white,
     $color: $blue700,
     $outline: true
+  );
+
+  @include variants(
+    $variant-name: '.primary-form',
+    $bg-color: $white,
+    $color: $blue700,
+    $form: true
   );
 
   @include variants(
@@ -48,6 +63,13 @@
   );
 
   @include variants(
+    $variant-name: '.secondary-form',
+    $bg-color: $white,
+    $color: $bluegray500,
+    $form: true
+  );
+
+  @include variants(
     $variant-name: '.success',
     $bg-color: $teal500,
     $color: $white
@@ -58,6 +80,13 @@
     $bg-color: $white,
     $color: $teal500,
     $outline: true
+  );
+
+  @include variants(
+    $variant-name: '.success-form',
+    $bg-color: $white,
+    $color: $teal500,
+    $form: true
   );
 
   @include variants(
@@ -74,6 +103,13 @@
   );
 
   @include variants(
+    $variant-name: '.warning-form',
+    $bg-color: $white,
+    $color: $yellow600,
+    $form: true
+  );
+
+  @include variants(
     $variant-name: '.error',
     $bg-color: $deeporangeA700,
     $color: $white
@@ -84,6 +120,13 @@
     $bg-color: $white,
     $color: $deeporangeA700,
     $outline: true
+  );
+
+  @include variants(
+    $variant-name: '.error-form',
+    $bg-color: $white,
+    $color: $deeporangeA700,
+    $form: true
   );
 
   @include variants(
@@ -100,12 +143,19 @@
   );
 
   @include variants(
+    $variant-name: '.info-form',
+    $bg-color: $white,
+    $color: $lightblue500,
+    $form: true
+  );
+
+  @include variants(
     $variant-name: '.link',
     $bg-color: $white,
     $color: $lightblue600,
     $textDecor: underline
   );
-  
+
   @include variants(
     $variant-name: '.link-outline',
     $bg-color: $lightblue600,

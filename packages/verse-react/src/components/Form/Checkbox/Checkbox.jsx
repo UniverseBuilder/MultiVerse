@@ -6,60 +6,57 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'utility/hooks';
 import { valueChange } from 'utility/redux/slices/forms/formSlice';
 
+import { ButtonGroup } from '../../ButtonGroup';
+
 export const Checkbox = ({
-  id,
   model,
+  groups,
   className,
-  placeholder,
-  onChange,
+  type,
   defaultValue,
-  disabled,
-  readonly,
+  onChange,
 }) => {
   const value = useForm(model);
   const dispatch = useDispatch();
 
   const handleChange = e => {
-    dispatch(valueChange({ model, value: e.target.checked }));
+    dispatch(valueChange({ model, value: [e], overWrite: true }));
     onChange();
   };
 
   useEffect(() => {
-    handleChange({ target: { checked: defaultValue } });
+    if (defaultValue) {
+      handleChange({ target: { value: defaultValue } });
+    }
   }, [defaultValue]);
 
   return (
-    <input
-      id={id}
-      aria-describedby="input"
-      onChange={handleChange}
-      type="checkbox"
-      className={className}
-      placeholder={placeholder}
-      value={value}
-      disabled={disabled}
-      readOnly={readonly}
+    <ButtonGroup
+      groups={groups}
+      onClick={handleChange}
+      activeGroup={value}
+      activeClass={`radio ${className} ${type}`}
+      inactiveClass={`radio ${className} ${type}-outline`}
     />
   );
 };
 
 Checkbox.propTypes = {
   model: PropTypes.string,
+  groups: PropTypes.arrayOf(PropTypes.string),
   className: PropTypes.string,
-  disabled: PropTypes.bool,
-  readonly: PropTypes.bool,
   type: PropTypes.string,
-  placeholder: PropTypes.string,
   onChange: PropTypes.func,
-  id: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   defaultValue: PropTypes.oneOfType([PropTypes.bool]),
 };
 
 Checkbox.defaultProps = {
-  id: 'datepicker-element',
+  id: 'radio-element',
+  groups: [],
   onChange: () => {},
   value: '',
   defaultValue: false,
   className: '',
+  type: 'primary',
 };

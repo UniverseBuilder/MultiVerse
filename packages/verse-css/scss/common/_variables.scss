@@ -1,4 +1,5 @@
 $global-spacing: 1rem;
+$global-font-size: 1rem;
 $global-title-font-size: 17px;
 $global-text-font-size: 14px;
 $global-font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
@@ -8,6 +9,7 @@ $global-line-height: 1.65;
 $global-border-width: 1px;
 $global-border-style: solid;
 $global-border-color: $gray300;
+$global-border-radius: 4px;
 $spacing-vertical: $global-spacing;
 $spacing-horizontal: $global-spacing;
 $global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
@@ -20,3 +22,10 @@ $navbar-padding-vertical: calc($global-spacing * 0.5);
 $navbar-padding-horizontal: $global-spacing;
 $font-bold: 900;
 $font-md-bold: 800;
+$font-md: 600;
+$form-padding: calc($global-spacing * 0.5);
+$form-font-size: calc($global-spacing * 0.5);
+$form-border-radius: $global-border-radius;
+$form-transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+  color 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+  width 400ms cubic-bezier(0.25, 0.8, 0.25, 1);

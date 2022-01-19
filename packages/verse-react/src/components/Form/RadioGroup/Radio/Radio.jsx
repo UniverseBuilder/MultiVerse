@@ -61,5 +61,5 @@ Radio.defaultProps = {
   onChange: () => {},
   value: '',
   defaultValue: false,
-  className: '',
+  className: 'form-radio secondary-form',
 };

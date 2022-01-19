@@ -1,18 +1,62 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 
-export const RadioGroup = ({ children, model }) => {
-  const childElements = React.Children.map(children, child => {
-    if (React.isValidElement(child)) {
-      return React.cloneElement(child, { model });
+import { useForm } from 'utility/hooks';
+import { valueChange } from 'utility/redux/slices/forms/formSlice';
+
+import { ButtonGroup } from '../../ButtonGroup';
+
+export const RadioGroup = ({
+  model,
+  groups,
+  className,
+  type,
+  defaultValue,
+  onChange,
+}) => {
+  const value = useForm(model);
+  const dispatch = useDispatch();
+
+  const handleChange = e => {
+    dispatch(valueChange({ model, value: e }));
+    onChange();
+  };
+
+  useEffect(() => {
+    if (defaultValue) {
+      handleChange({ target: { checked: defaultValue } });
     }
-    return child;
-  });
-  return <React.Fragment>{childElements}</React.Fragment>;
+  }, [defaultValue]);
+
+  return (
+    <ButtonGroup
+      groups={groups}
+      onClick={handleChange}
+      activeGroup={[value]}
+      activeClass={`radio ${className} ${type}`}
+      inactiveClass={`radio ${className} ${type}-outline`}
+    />
+  );
 };
 
 RadioGroup.propTypes = {
-  children: PropTypes.node.isRequired,
-  model: PropTypes.node.isRequired,
+  model: PropTypes.string,
+  groups: PropTypes.arrayOf(PropTypes.string),
+  className: PropTypes.string,
+  type: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  defaultValue: PropTypes.oneOfType([PropTypes.bool]),
+};
+
+RadioGroup.defaultProps = {
+  id: 'radio-element',
+  groups: [],
+  onChange: () => {},
+  value: '',
+  defaultValue: false,
+  className: '',
+  type: 'primary',
 };

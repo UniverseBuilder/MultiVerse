@@ -68,5 +68,5 @@ Input.defaultProps = {
   onChange: () => {},
   value: '',
   defaultValue: '',
-  className: '',
+  className: 'form-input secondary-form',
 };
