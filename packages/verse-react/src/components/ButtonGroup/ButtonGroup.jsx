@@ -25,7 +25,7 @@ export const ButtonGroup = ({
 ButtonGroup.propTypes = {
   groups: PropTypes.arrayOf(PropTypes.string),
   onClick: PropTypes.func,
-  activeGroup: PropTypes.arrayOf(PropTypes.string),
+  activeGroup: PropTypes.any,
   activeClass: PropTypes.string,
   inactiveClass: PropTypes.string,
 };

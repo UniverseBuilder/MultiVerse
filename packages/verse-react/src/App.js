@@ -29,9 +29,9 @@ function App() {
         </Navbar.NavItem>
         <Navbar.NavItemRight>
           <React.Fragment>
-            <div className="m-r-8 w-400">
+            {/* <div className="m-r-8 w-400">
               <div className="gcse-search"></div>
-            </div>
+            </div> */}
             <Button
               className="btn-alert"
               onClick={() =>

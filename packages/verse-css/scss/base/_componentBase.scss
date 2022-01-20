@@ -92,3 +92,52 @@
   @include button($transform: false);
   border-radius: 0px;
 }
+
+.dropdown {
+  position: relative;
+  z-index: 7;
+}
+
+.dropdown-content {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+  @include dropdownContent();
+}
+
+.dropdown-content div {
+  padding: 0.575rem 0.8rem;
+  display: block;
+  white-space: nowrap;
+  &:hover {
+    font-weight: 600;
+    filter: brightness(1.25);
+  }
+}
+
+.option {
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  max-height: 200px;
+  overflow-y: auto;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  // box-shadow: rgb(0 0 0 / 10%) 0 2px 4px 0;
+  // &:hover {
+  //   box-shadow: rgb(0 0 0 / 15%) 0 3px 9px 0;
+  // }
+  display: block;
+  white-space: nowrap;
+  &:hover {
+    font-weight: 600;
+    filter: brightness(1.25);
+  }
+}

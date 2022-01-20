@@ -9,7 +9,6 @@ import { valueChange } from 'utility/redux/slices/forms/formSlice';
 export const Datepicker = ({
   id,
   model,
-  type,
   className,
   placeholder,
   onChange,
@@ -21,11 +20,7 @@ export const Datepicker = ({
   const dispatch = useDispatch();
 
   const handleChange = e => {
-    if (type === 'number') {
-      dispatch(valueChange({ model, value: Number(e.target.value) }));
-    } else {
-      dispatch(valueChange({ model, value: e.target.value }));
-    }
+    dispatch(valueChange({ model, value: e.target.value }));
     onChange();
   };
 
@@ -40,7 +35,7 @@ export const Datepicker = ({
       id={id}
       aria-describedby="input"
       onChange={handleChange}
-      type="Date"
+      type="datetime-local"
       className={className}
       placeholder={placeholder}
       value={value}
@@ -55,7 +50,6 @@ Datepicker.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   readonly: PropTypes.bool,
-  type: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   id: PropTypes.string,
@@ -68,5 +62,5 @@ Datepicker.defaultProps = {
   onChange: () => {},
   value: '',
   defaultValue: '',
-  className: '',
+  className: 'form-input secondary-form',
 };

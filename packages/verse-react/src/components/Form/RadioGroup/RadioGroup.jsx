@@ -31,13 +31,15 @@ export const RadioGroup = ({
   }, [defaultValue]);
 
   return (
-    <ButtonGroup
-      groups={groups}
-      onClick={handleChange}
-      activeGroup={[value]}
-      activeClass={`radio ${className} ${type}`}
-      inactiveClass={`radio ${className} ${type}-outline`}
-    />
+    <div>
+      <ButtonGroup
+        groups={groups}
+        onClick={handleChange}
+        activeGroup={[value]}
+        activeClass={`radio ${className} ${type}`}
+        inactiveClass={`radio ${className} ${type}-outline`}
+      />
+    </div>
   );
 };
 

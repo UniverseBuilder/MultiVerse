@@ -16,6 +16,10 @@ export const Input = ({
   defaultValue,
   disabled,
   readonly,
+  onFocus,
+  onBlur,
+  onMouseDown,
+  autoComplete,
 }) => {
   const value = useForm(model);
   const dispatch = useDispatch();
@@ -46,6 +50,10 @@ export const Input = ({
       value={value}
       disabled={disabled}
       readOnly={readonly}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      onMouseDown={onMouseDown}
+      autoComplete={autoComplete}
     />
   );
 };
@@ -61,11 +69,17 @@ Input.propTypes = {
   id: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
+  onMouseDown: PropTypes.func,
+  autoComplete: PropTypes.string,
 };
 
 Input.defaultProps = {
   id: 'input-element',
-  onChange: () => {},
+  onChange: () => null,
+  onMouseDown: () => null,
+  onBlur: () => null,
   value: '',
   defaultValue: '',
   className: 'form-input secondary-form',

@@ -21,6 +21,12 @@
   background-color: $background;
   font: $global-text-font-size $global-font-family;
 
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
   .inline {
     display: inline;
   }

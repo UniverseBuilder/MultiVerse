@@ -54,7 +54,7 @@ export const Select = ({
         </When>
         <Otherwise>
           {options.map(option => (
-            <option value={option} key={option}>
+            <option value={option} key={option} className="option">
               {option}
             </option>
           ))}

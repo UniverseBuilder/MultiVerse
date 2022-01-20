@@ -1,6 +1,7 @@
 import { Wrapper } from '../Wrapper';
 import { Checkbox } from './Checkbox';
 import { Datepicker } from './Datepicker';
+import { Dropdown } from './Dropdown';
 import { Form } from './Form';
 import { Input } from './Input';
 import { Label } from './Label';
@@ -18,5 +19,6 @@ Form.Checkbox = Checkbox;
 Form.RadioGroup = RadioGroup;
 Form.Radio = Radio;
 Form.Wrapper = Wrapper;
+Form.Dropdown = Dropdown;
 
 export { Form };

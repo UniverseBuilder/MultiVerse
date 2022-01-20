@@ -41,3 +41,28 @@
     }
   }
 }
+
+@mixin dropdownContent($flat: false) {
+  position: absolute;
+  left: 0;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: white;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  max-height: 200px;
+  overflow-y: auto;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  @if $flat == false {
+    box-shadow: rgb(0 0 0 / 10%) 0 2px 4px 0;
+    &:hover {
+      box-shadow: rgb(0 0 0 / 15%) 0 3px 9px 0;
+    }
+  }
+}
