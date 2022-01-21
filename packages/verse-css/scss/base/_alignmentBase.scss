@@ -22,3 +22,8 @@
 // Width, Height
 @include sizing-loop('.w-', 'width');
 @include sizing-loop('.h-', 'height');
+
+
+.text-center{
+  text-align: center;
+}

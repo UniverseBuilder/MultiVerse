@@ -39,3 +39,23 @@
     }
   }
 }
+
+@mixin icon(
+  $variant-name,
+  $invert: 50%,
+  $sepia: 50%,
+  $saturate: 50%,
+  $hue-rotate: 50deg,
+  $brightness: 50%,
+  $contrast: 50%
+) {
+  #{$variant-name} {
+    filter: invert($invert) sepia($sepia) saturate($saturate)
+      hue-rotate($hue-rotate) brightness($brightness) contrast($contrast);
+    &:hover {
+      filter: invert($invert) sepia($sepia) saturate($saturate)
+        hue-rotate($hue-rotate) brightness($brightness - 25%)
+        contrast($contrast);
+    }
+  }
+}

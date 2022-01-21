@@ -2,6 +2,13 @@
   display: flex;
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap:wrap;
+}
+
 @mixin flex-items($flex: 1, $align: unset, $justify: unset, $minwidth: 0) {
   @include flex;
   align-items: $align;

@@ -168,4 +168,24 @@
     $color: $white,
     $outline: true
   );
+
+  @include icon(
+    $variant-name: '.primary-icon',
+    $invert: 36%,
+    $sepia: 85%,
+    $saturate: 712%,
+    $hue-rotate: 174deg,
+    $brightness: 94%,
+    $contrast: 105%
+  );
+  
+  @include icon(
+    $variant-name: '.secondary-icon',
+    $invert: 41%,
+    $sepia: 86%,
+    $saturate: 131%,
+    $hue-rotate: 174deg,
+    $brightness: 96%,
+    $contrast: 88%
+  );
 }

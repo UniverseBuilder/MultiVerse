@@ -141,3 +141,10 @@
     filter: brightness(1.25);
   }
 }
+
+.iconWrapper {
+  @extend .flex-center;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: rgb(0 0 0 / 15%) 0 3px 9px 0;
+}
