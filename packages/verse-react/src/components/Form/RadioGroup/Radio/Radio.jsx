@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
 
-import { valueChange } from 'utility/redux/slices/forms/formSlice';
+import { useForm } from 'utility/redux/slices/forms/formSlice';
 
 export const Radio = ({
   id,
@@ -16,10 +15,10 @@ export const Radio = ({
   disabled,
   readonly,
 }) => {
-  const dispatch = useDispatch();
+  const { set } = useForm();
 
   const handleChange = e => {
-    dispatch(valueChange({ model, value: e.target.value }));
+    set({ model, value: e.target.value });
     onChange();
   };
 

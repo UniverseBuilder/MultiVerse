@@ -148,3 +148,43 @@
   padding: 1rem;
   box-shadow: rgb(0 0 0 / 15%) 0 3px 9px 0;
 }
+.accordion {
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    position: relative;
+    cursor: pointer;
+    .header {
+      margin: 0 1rem 0 0;
+      color: rgb(50, 83, 220);
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .icon {
+      display: flex;
+      margin: auto 0px;
+    }
+  }
+  .accordion-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: $bluegray700;
+    font-size: 18px;
+    font-weight: inherit;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    padding-bottom: 1.5rem;
+  }
+  .accordion-wrapper {
+    border-bottom: 1px solid $gray200;
+  }
+  .accordion-active {
+    border-radius: 0.6rem;
+    box-shadow: rgb(0 0 0 / 15%) 0 3px 9px 0;
+  }
+}

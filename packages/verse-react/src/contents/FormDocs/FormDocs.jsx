@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { Form } from 'components/Form';
-import { useForm } from 'utility/hooks';
+import { useModel } from 'utility/hooks';
 
 export const FormDocs = () => {
-  const form = useForm();
+  const form = useModel();
   console.log(form);
   return (
     <div>

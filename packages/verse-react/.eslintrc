@@ -9,6 +9,41 @@
   "rules": {
     "react/jsx-no-undef": [2, { "allowGlobals": true }],
     // "no-undef": [2, { "allowGlobals": true, "typeof": true }],
+    "react/jsx-sort-props": [
+      2,
+      {
+        "ignoreCase": false,
+        "noSortAlphabetically": false
+      }
+    ],
+    "react/sort-comp": [
+      2,
+      {
+        "order": [
+          "static-methods",
+          "lifecycle",
+          "/^on.+$/",
+          "render",
+          "everything-else"
+        ]
+      }
+    ],
+    "react/jsx-sort-default-props": [
+      2,
+      {
+        "ignoreCase": false
+      }
+    ],
+    "react/sort-prop-types": [
+      2,
+      {
+        "callbacksLast": false,
+        "ignoreCase": false,
+        "requiredFirst": true,
+        "sortShapeProp": true,
+        "noSortAlphabetically": false
+      }
+    ],
     "no-console": "off",
     "strict": ["error", "global"],
     "curly": "warn",

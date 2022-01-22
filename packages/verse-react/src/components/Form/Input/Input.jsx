@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
 
-import { useForm } from 'utility/hooks';
-import { valueChange } from 'utility/redux/slices/forms/formSlice';
+import { useModel } from 'utility/hooks';
+import { useForm } from 'utility/redux/slices/forms/formSlice';
+
 
 export const Input = ({
   id,
@@ -21,14 +21,14 @@ export const Input = ({
   onMouseDown,
   autoComplete,
 }) => {
-  const value = useForm(model);
-  const dispatch = useDispatch();
+  const value = useModel(model);
+  const { set } = useForm();
 
   const handleChange = e => {
     if (type === 'number') {
-      dispatch(valueChange({ model, value: Number(e.target.value) }));
+      set({ model, value: Number(e.target.value) });
     } else {
-      dispatch(valueChange({ model, value: e.target.value }));
+      set({ model, value: e.target.value });
     }
     onChange();
   };

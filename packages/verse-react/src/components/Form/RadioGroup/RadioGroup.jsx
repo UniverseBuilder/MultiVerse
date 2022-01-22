@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
 
-import { useForm } from 'utility/hooks';
-import { valueChange } from 'utility/redux/slices/forms/formSlice';
+import { useModel } from 'utility/hooks';
+import { useForm } from 'utility/redux/slices/forms/formSlice';
 
 import { ButtonGroup } from '../../ButtonGroup';
 
@@ -16,11 +15,11 @@ export const RadioGroup = ({
   defaultValue,
   onChange,
 }) => {
-  const value = useForm(model);
-  const dispatch = useDispatch();
+  const value = useModel(model);
+  const { set } = useForm();
 
   const handleChange = e => {
-    dispatch(valueChange({ model, value: e }));
+    set({ model, value: e });
     onChange();
   };
 
