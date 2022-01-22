@@ -1,10 +1,11 @@
-/* eslint-disable */
 import React, { useEffect } from 'react';
 
 import PropTypes from 'prop-types';
 
 import { useModel } from 'utility/hooks';
 import { useForm } from 'utility/redux/slices/forms/formSlice';
+
+import { AccordionControls } from './AccordionControls';
 
 export const Accordion = ({
   className,
@@ -13,11 +14,15 @@ export const Accordion = ({
   defaultAccordions,
   controlled,
 }) => {
-  const accordions = useModel(model);
+  const { accordions, controls } = useModel(model);
   const { set } = useForm();
 
   const handleAccordionClick = e => {
-    set({ model, value: [e], overWrite: true });
+    set({ model, value: { accordions: [e] }, overWrite: true });
+  };
+
+  const handleControls = e => {
+    set({ model, value: { controls: [e] }, overWrite: true });
   };
 
   useEffect(() => {
@@ -31,20 +36,26 @@ export const Accordion = ({
       return React.cloneElement(child, {
         controlled,
         accordions,
+        controls,
         handleAccordionClick,
       });
     }
     return child;
   });
-  return <div className={className}>{childrenWithProps}</div>;
+  return (
+    <div className={className}>
+      <AccordionControls controls={controls} handleControls={handleControls}/>
+      {childrenWithProps}
+    </div>
+  );
 };
 
 Accordion.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   controlled: PropTypes.bool,
-  model: PropTypes.string,
   defaultAccordions: PropTypes.array,
+  model: PropTypes.string,
 };
 
 Accordion.defaultProps = {

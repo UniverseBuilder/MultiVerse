@@ -187,4 +187,9 @@
     border-radius: 0.6rem;
     box-shadow: rgb(0 0 0 / 15%) 0 3px 9px 0;
   }
+  .accordion-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+  }
 }
