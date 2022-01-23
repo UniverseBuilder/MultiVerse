@@ -5,41 +5,41 @@ import { Alert } from 'components/Alert';
 export const AlertDocs = () => {
   return (
     <div>
-      <Alert message="Primary Alert" type="primary" className="m-x-8" />
-      <Alert message="Secondary Alert" type="secondary" className="m-x-8" />
-      <Alert message="Success Alert" type="success" className="m-x-8" />
-      <Alert message="Warning Alert" type="warning" className="m-x-8" />
-      <Alert message="Error Alert" type="error" className="m-x-8" />
-      <Alert message="Info Alert" type="info" className="m-x-8" />
+      <Alert className="m-x-8" message="Primary Alert" type="primary" />
+      <Alert className="m-x-8" message="Secondary Alert" type="secondary" />
+      <Alert className="m-x-8" message="Success Alert" type="success" />
+      <Alert className="m-x-8" message="Warning Alert" type="warning" />
+      <Alert className="m-x-8" message="Error Alert" type="error" />
+      <Alert className="m-x-8" message="Info Alert" type="info" />
       <Alert
+        className="m-x-8"
         message="Primary Outline Alert"
         type="primary-outline"
-        className="m-x-8"
       />
       <Alert
+        className="m-x-8"
         message="Secondary Outline Alert"
         type="secondary-outline"
-        className="m-x-8"
       />
       <Alert
+        className="m-x-8"
         message="Success Outline Alert"
         type="success-outline"
-        className="m-x-8"
       />
       <Alert
+        className="m-x-8"
         message="Warning Outline Alert"
         type="warning-outline"
-        className="m-x-8"
       />
       <Alert
+        className="m-x-8"
         message="Error Outline Alert"
         type="error-outline"
-        className="m-x-8"
       />
       <Alert
+        className="m-x-8"
         message="Info Outline Alert"
         type="info-outline"
-        className="m-x-8"
       />
     </div>
   );

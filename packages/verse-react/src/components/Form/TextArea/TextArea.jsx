@@ -37,36 +37,36 @@ export const TextArea = ({
 
   return (
     <textarea
-      id={id}
       aria-describedby="textarea"
-      onChange={handleChange}
-      type={type}
       className={className}
-      placeholder={placeholder}
-      value={value}
       disabled={disabled}
+      id={id}
+      onChange={handleChange}
+      placeholder={placeholder}
       readOnly={readonly}
+      type={type}
+      value={value}
     />
   );
 };
 
 TextArea.propTypes = {
-  model: PropTypes.string,
   className: PropTypes.string,
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   disabled: PropTypes.bool,
+  id: PropTypes.string,
+  model: PropTypes.string,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
   readonly: PropTypes.bool,
   type: PropTypes.string,
-  placeholder: PropTypes.string,
-  onChange: PropTypes.func,
-  id: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 TextArea.defaultProps = {
+  className: 'form-textarea secondary-form',
+  defaultValue: '',
   id: 'textarea-element',
   onChange: () => {},
   value: '',
-  defaultValue: '',
-  className: 'form-textarea secondary-form',
 };

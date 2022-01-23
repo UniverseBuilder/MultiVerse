@@ -6,23 +6,23 @@ import "../../Form/Form.scss";
 export const InputBar = ({ id, type, placeholder, onChange }) => {
   return (
     <input
-      type={type}
+      aria-describedby="input"
+      autoComplete="off"
+      autoFocus
       className="inputBar"
       id={id}
-      aria-describedby="input"
-      placeholder={placeholder}
       onChange={onChange}
-      autoFocus
-      autoComplete="off"
+      placeholder={placeholder}
+      type={type}
     />
   );
 };
 
 InputBar.propTypes = {
-  type: PropTypes.string,
-  placeholder: PropTypes.string,
-  onChange: PropTypes.func,
   id: PropTypes.string,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
+  type: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 

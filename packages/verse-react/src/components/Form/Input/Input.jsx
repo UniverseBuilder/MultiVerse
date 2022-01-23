@@ -41,46 +41,46 @@ export const Input = ({
 
   return (
     <input
-      id={id}
       aria-describedby="input"
-      onChange={handleChange}
-      type={type}
-      className={className}
-      placeholder={placeholder}
-      value={value}
-      disabled={disabled}
-      readOnly={readonly}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      onMouseDown={onMouseDown}
       autoComplete={autoComplete}
+      className={className}
+      disabled={disabled}
+      id={id}
+      onBlur={onBlur}
+      onChange={handleChange}
+      onFocus={onFocus}
+      onMouseDown={onMouseDown}
+      placeholder={placeholder}
+      readOnly={readonly}
+      type={type}
+      value={value}
     />
   );
 };
 
 Input.propTypes = {
-  model: PropTypes.string,
+  autoComplete: PropTypes.string,
   className: PropTypes.string,
-  disabled: PropTypes.bool,
-  readonly: PropTypes.bool,
-  type: PropTypes.string,
-  placeholder: PropTypes.string,
-  onChange: PropTypes.func,
-  id: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  disabled: PropTypes.bool,
+  id: PropTypes.string,
+  model: PropTypes.string,
   onBlur: PropTypes.func,
+  onChange: PropTypes.func,
   onFocus: PropTypes.func,
   onMouseDown: PropTypes.func,
-  autoComplete: PropTypes.string,
+  placeholder: PropTypes.string,
+  readonly: PropTypes.bool,
+  type: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 Input.defaultProps = {
+  className: 'form-input secondary-form',
+  defaultValue: '',
   id: 'input-element',
+  onBlur: () => null,
   onChange: () => null,
   onMouseDown: () => null,
-  onBlur: () => null,
   value: '',
-  defaultValue: '',
-  className: 'form-input secondary-form',
 };

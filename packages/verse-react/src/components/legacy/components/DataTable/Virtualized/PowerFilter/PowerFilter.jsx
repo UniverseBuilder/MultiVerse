@@ -11,8 +11,8 @@ export const PowerFilter = ({ applyFilter, onClose }) => {
     <div className="powerFilter">
       <div className="inputFilter">
         <InputBar
-          placeholder="Filter"
           onChange={(e) => applyFilter(e.target.value)}
+          placeholder="Filter"
         />
       </div>
       <FAIcon

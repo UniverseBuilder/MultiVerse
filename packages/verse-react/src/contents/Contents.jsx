@@ -23,25 +23,25 @@ import { TabsDocs } from './TabsDocs';
 export const Contents = () => {
   return (
     <Routes>
-      <Route path="/" element={<AccordionDocs />} />
-      <Route path="/Accordion" element={<AccordionDocs />} />
-      <Route path="/Alert" element={<AlertDocs />} />
-      <Route path="/Badge" element={<BadgeDocs />} />
-      <Route path="/Badge" element={<BadgeDocs />} />
-      <Route path="/Button" element={<ButtonDocs />} />
-      <Route path="/ButtonGroup" element={<ButtonGroupDocs />} />
-      <Route path="/Card" element={<CardDocs />} />
-      <Route path="/Carousel" element={<CarouselDocs />} />
-      <Route path="/Datagrid" element={<DatagridDocs />} />
-      <Route path="/Form" element={<FormDocs />} />
-      <Route path="/Icons" element={<IconsDocs />} />
-      <Route path="/Image" element={<ImageDocs />} />
-      <Route path="/List" element={<ListDocs />} />
-      <Route path="/Modal" element={<ModalDocs />} />
-      <Route path="/Overlay" element={<OverlayDocs />} />
-      <Route path="/RenderHTML" element={<RenderHTMLDocs />} />
-      <Route path="/RichTextEditor" element={<RichTextEditorDocs />} />
-      <Route path="/Tabs" element={<TabsDocs />} />
+      <Route element={<AccordionDocs />} path="/" />
+      <Route element={<AccordionDocs />} path="/Accordion" />
+      <Route element={<AlertDocs />} path="/Alert" />
+      <Route element={<BadgeDocs />} path="/Badge" />
+      <Route element={<BadgeDocs />} path="/Badge" />
+      <Route element={<ButtonDocs />} path="/Button" />
+      <Route element={<ButtonGroupDocs />} path="/ButtonGroup" />
+      <Route element={<CardDocs />} path="/Card" />
+      <Route element={<CarouselDocs />} path="/Carousel" />
+      <Route element={<DatagridDocs />} path="/Datagrid" />
+      <Route element={<FormDocs />} path="/Form" />
+      <Route element={<IconsDocs />} path="/Icons" />
+      <Route element={<ImageDocs />} path="/Image" />
+      <Route element={<ListDocs />} path="/List" />
+      <Route element={<ModalDocs />} path="/Modal" />
+      <Route element={<OverlayDocs />} path="/Overlay" />
+      <Route element={<RenderHTMLDocs />} path="/RenderHTML" />
+      <Route element={<RichTextEditorDocs />} path="/RichTextEditor" />
+      <Route element={<TabsDocs />} path="/Tabs" />
     </Routes>
   );
 };

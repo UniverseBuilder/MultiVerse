@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 export const FAIcon = ({ className, ariaHidden, onClick, title }) => {
   return (
     <i
-      className={className}
       aria-hidden={ariaHidden}
+      className={className}
       onClick={onClick}
       title={title}
     />
@@ -14,15 +14,15 @@ export const FAIcon = ({ className, ariaHidden, onClick, title }) => {
 };
 
 FAIcon.propTypes = {
-  className: PropTypes.string,
   ariaHidden: PropTypes.bool,
+  className: PropTypes.string,
   onClick: PropTypes.func,
   title: PropTypes.string,
 };
 
 FAIcon.defaultProps = {
-  className: "fa",
   ariaHidden: false,
+  className: "fa",
   onClick: () => {},
   title: "",
 };

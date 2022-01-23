@@ -10,11 +10,11 @@ export const ButtonGroup = ({
   inactiveClass,
 }) => {
   return (
-    <For each="group" of={groups} index="idx">
+    <For each="group" index="idx" of={groups}>
       <button
         className={activeGroup.includes(group) ? activeClass : inactiveClass}
-        onClick={() => onClick(group)}
         key={`group_${idx}`}
+        onClick={() => onClick(group)}
       >
         {group}
       </button>
@@ -23,11 +23,11 @@ export const ButtonGroup = ({
 };
 
 ButtonGroup.propTypes = {
-  groups: PropTypes.arrayOf(PropTypes.string),
-  onClick: PropTypes.func,
-  activeGroup: PropTypes.any,
   activeClass: PropTypes.string,
+  activeGroup: PropTypes.any,
+  groups: PropTypes.arrayOf(PropTypes.string),
   inactiveClass: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 ButtonGroup.defaultPropTypes = {

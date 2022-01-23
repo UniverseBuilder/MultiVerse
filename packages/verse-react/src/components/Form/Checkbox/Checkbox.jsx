@@ -33,32 +33,32 @@ export const Checkbox = ({
   return (
     <div>
       <ButtonGroup
-        groups={groups}
-        onClick={handleChange}
-        activeGroup={value}
         activeClass={`radio ${className} ${type}`}
+        activeGroup={value}
+        groups={groups}
         inactiveClass={`radio ${className} ${type}-outline`}
+        onClick={handleChange}
       />
     </div>
   );
 };
 
 Checkbox.propTypes = {
-  model: PropTypes.string,
-  groups: PropTypes.arrayOf(PropTypes.string),
   className: PropTypes.string,
-  type: PropTypes.string,
-  onChange: PropTypes.func,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   defaultValue: PropTypes.oneOfType([PropTypes.bool]),
+  groups: PropTypes.arrayOf(PropTypes.string),
+  model: PropTypes.string,
+  onChange: PropTypes.func,
+  type: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 Checkbox.defaultProps = {
-  id: 'radio-element',
-  groups: [],
-  onChange: () => {},
-  value: '',
-  defaultValue: false,
   className: '',
+  defaultValue: false,
+  groups: [],
+  id: 'radio-element',
+  onChange: () => {},
   type: 'primary',
+  value: '',
 };

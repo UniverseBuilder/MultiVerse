@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export const Label = ({ children, className }) => {
   return (
-    <label htmlFor={"form_label"} className={className}>
+    <label className={className} htmlFor={"form_label"}>
       {children}
     </label>
   );

@@ -7,9 +7,9 @@ export const SideNavigation = ({ contents }) => {
   return (
     <div className="sidenav h-100VH">
       <div>
-        <For each="content" of={contents} index="idx">
+        <For each="content" index="idx" of={contents}>
           <div key={idx}>
-            <NavLink to={content} className="btn-block secondary">
+            <NavLink className="btn-block secondary" to={content}>
               {content}
             </NavLink>
           </div>

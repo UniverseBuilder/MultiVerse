@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 
 import PropTypes from 'prop-types';
@@ -19,20 +18,22 @@ export const Icon = ({ name, type, className, width, height }) => {
       });
     }
   }, [name]);
-  return <img src={iconPath} width={20} height={20} className={className} />;
+  return (
+    <img className={className} height={height} src={iconPath} width={width} />
+  );
 };
 
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
-  type: PropTypes.string,
   className: PropTypes.string,
-  width: PropTypes.number,
   height: PropTypes.number,
+  type: PropTypes.string,
+  width: PropTypes.number,
 };
 
 Icon.defaultProps = {
-  type: 'base',
   className: 'primary-icon',
-  width: 24,
   height: 24,
+  type: 'base',
+  width: 24,
 };

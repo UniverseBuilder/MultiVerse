@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 export const DropdownButton = ({ children, className }) => {
   return (
     <div
+      aria-expanded="false"
+      aria-haspopup="true"
       className={className}
       data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
     >
       {children}
     </div>

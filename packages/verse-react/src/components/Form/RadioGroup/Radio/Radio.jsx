@@ -28,37 +28,37 @@ export const Radio = ({
 
   return (
     <input
-      id={id}
       aria-describedby="radio"
-      onChange={handleChange}
-      type="radio"
-      name={model}
       className={className}
-      placeholder={placeholder}
-      value={value}
       disabled={disabled}
+      id={id}
+      name={model}
+      onChange={handleChange}
+      placeholder={placeholder}
       readOnly={readonly}
+      type="radio"
+      value={value}
     />
   );
 };
 
 Radio.propTypes = {
-  model: PropTypes.string,
   className: PropTypes.string,
+  defaultValue: PropTypes.oneOfType([PropTypes.bool]),
   disabled: PropTypes.bool,
+  id: PropTypes.string,
+  model: PropTypes.string,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
   readonly: PropTypes.bool,
   type: PropTypes.string,
-  placeholder: PropTypes.string,
-  onChange: PropTypes.func,
-  id: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  defaultValue: PropTypes.oneOfType([PropTypes.bool]),
 };
 
 Radio.defaultProps = {
+  className: 'form-radio secondary-form',
+  defaultValue: false,
   id: 'radio-element',
   onChange: () => {},
   value: '',
-  defaultValue: false,
-  className: 'form-radio secondary-form',
 };

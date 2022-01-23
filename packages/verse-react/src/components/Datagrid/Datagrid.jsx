@@ -8,10 +8,10 @@ export const Datagrid = ({ schema, data }) => {
   return (
     <div className="">
       <DataTable
-        title="MOCK DATA"
-        columnHeader={schema.fields}
         columnData={data}
+        columnHeader={schema.fields}
         isCustomizable={false}
+        title="MOCK DATA"
       />
     </div>
   );

@@ -21,15 +21,15 @@ export const FormDocs = () => {
           <Form.Label>Textarea</Form.Label>
           <Form.TextArea model="textarea" placeholder="TextArea" />
           <Form.RadioGroup
-            model="radio"
-            groups={['Option 1', 'Option 2', 'Option 3']}
             className="m-t-24"
+            groups={['Option 1', 'Option 2', 'Option 3']}
+            model="radio"
             type="secondary"
           />
           <Form.Checkbox
-            model="checkbox"
-            groups={['Option 1', 'Option 2', 'Option 3']}
             className="m-t-24 m-b-24"
+            groups={['Option 1', 'Option 2', 'Option 3']}
+            model="checkbox"
             type="secondary"
           />
           <Form.Label>Multi Select</Form.Label>
@@ -42,7 +42,7 @@ export const FormDocs = () => {
           <Form.Datepicker model="datepicker" />
         </Form.Wrapper>
         <Form.Wrapper className="flex-45">
-          <For each="value" of={Object.keys(form)} index="idx">
+          <For each="value" index="idx" of={Object.keys(form)}>
             <b>{value}</b>&nbsp;:&nbsp;{JSON.stringify(form[value])}
             <br />
           </For>

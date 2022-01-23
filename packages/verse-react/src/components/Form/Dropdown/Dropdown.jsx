@@ -31,24 +31,24 @@ export const Dropdown = ({ model, options, onChange, defaultValue }) => {
     <div className="dropdown">
       <div className="dropdown-select">
         <Input
-          model={model}
-          type="search"
-          placeholder="Select"
-          onFocus={handleOptions}
-          onBlur={handleOptions}
           autoComplete="off"
+          model={model}
+          onBlur={handleOptions}
+          onFocus={handleOptions}
+          placeholder="Select"
           readonly={true}
+          type="search"
         />
       </div>
       <If condition={show}>
         <div className="dropdown-content">
-          <For each="option" of={options} index="idx">
+          <For each="option" index="idx" of={options}>
             <div
-              key={`option_${idx}`}
               className={value.includes(option) ? 'secondary' : undefined}
-              tabIndex="0"
-              onMouseDown={e => e.preventDefault()}
+              key={`option_${idx}`}
               onClick={() => handleChange(option)}
+              onMouseDown={e => e.preventDefault()}
+              tabIndex="0"
             >
               {option}
             </div>
@@ -61,13 +61,13 @@ export const Dropdown = ({ model, options, onChange, defaultValue }) => {
 
 Dropdown.propTypes = {
   model: PropTypes.string.isRequired,
-  options: PropTypes.array,
-  onChange: PropTypes.func,
   defaultValue: PropTypes.any,
+  onChange: PropTypes.func,
+  options: PropTypes.array,
 };
 
 Dropdown.defaultProps = {
-  options: [],
   defaultValue: '',
   onChange: () => null,
+  options: [],
 };

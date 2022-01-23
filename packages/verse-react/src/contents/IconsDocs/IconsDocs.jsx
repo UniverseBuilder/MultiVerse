@@ -14,24 +14,24 @@ export const IconsDocs = () => {
   return (
     <Wrapper>
       <Wrapper className="flex">
-        <For each="icon" of={icons} index="idx">
+        <For each="icon" index="idx" of={icons}>
           <Wrapper className="iconWrapper">
             <Icon
               {...icon}
-              key={`icon_${idx}`}
               className="primary-icon flex-100"
+              key={`icon_${idx}`}
             />
             <div className="text-center m-t-8">{icon.name}</div>
           </Wrapper>
         </For>
       </Wrapper>
       <Wrapper className="flex">
-        <For each="icon" of={fillIcons} index="idx">
+        <For each="icon" index="idx" of={fillIcons}>
           <Wrapper className="iconWrapper">
             <Icon
               {...icon}
-              key={`icon_${idx}`}
               className="primary-icon flex-100"
+              key={`icon_${idx}`}
             />
             <div className="text-center m-t-8">{icon.name}</div>
           </Wrapper>

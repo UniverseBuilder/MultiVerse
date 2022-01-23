@@ -32,35 +32,35 @@ export const Datepicker = ({
 
   return (
     <input
-      id={id}
       aria-describedby="input"
-      onChange={handleChange}
-      type="datetime-local"
       className={className}
-      placeholder={placeholder}
-      value={value}
       disabled={disabled}
+      id={id}
+      onChange={handleChange}
+      placeholder={placeholder}
       readOnly={readonly}
+      type="datetime-local"
+      value={value}
     />
   );
 };
 
 Datepicker.propTypes = {
-  model: PropTypes.string,
   className: PropTypes.string,
-  disabled: PropTypes.bool,
-  readonly: PropTypes.bool,
-  placeholder: PropTypes.string,
-  onChange: PropTypes.func,
-  id: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  disabled: PropTypes.bool,
+  id: PropTypes.string,
+  model: PropTypes.string,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
+  readonly: PropTypes.bool,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 Datepicker.defaultProps = {
+  className: 'form-input secondary-form',
+  defaultValue: '',
   id: 'datepicker-element',
   onChange: () => {},
   value: '',
-  defaultValue: '',
-  className: 'form-input secondary-form',
 };

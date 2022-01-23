@@ -34,11 +34,11 @@ export const Alert = ({
           {message}
           {dismissButton && (
             <button
-              type="button"
+              aria-label="Close"
               className="close"
               data-dismiss="alert"
-              aria-label="Close"
               onClick={onDismiss}
+              type="button"
             >
               <span aria-hidden="true">&times;</span>
             </button>
@@ -50,6 +50,12 @@ export const Alert = ({
 };
 
 Alert.propTypes = {
+  autoDismiss: PropTypes.bool,
+  className: PropTypes.string,
+  dismissButton: PropTypes.bool,
+  dismissTimeOut: PropTypes.number,
+  message: PropTypes.node,
+  onDismiss: PropTypes.func,
   type: PropTypes.oneOf([
     "",
     "primary",
@@ -61,20 +67,14 @@ Alert.propTypes = {
     "light",
     "dark",
   ]),
-  className: PropTypes.string,
-  message: PropTypes.node,
-  dismissButton: PropTypes.bool,
-  onDismiss: PropTypes.func,
-  autoDismiss: PropTypes.bool,
-  dismissTimeOut: PropTypes.number
 };
 
 Alert.defaultProps = {
-  type: "",
-  className: "",
-  message: undefined,
-  dismissButton: false,
-  onDismiss: () => {},
   autoDismiss: false,
+  className: "",
+  dismissButton: false,
   dismissTimeOut: 2000,
+  message: undefined,
+  onDismiss: () => {},
+  type: "",
 };

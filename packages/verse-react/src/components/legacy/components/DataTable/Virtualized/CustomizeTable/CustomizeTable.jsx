@@ -16,7 +16,7 @@ export const CustomizeTable = ({
       <div className="customizeColumns">
         <Choose>
           <When condition={headers.some((header) => header.show === false)}>
-            <For each="header" of={headers} index="idx">
+            <For each="header" index="idx" of={headers}>
               <Choose>
                 <When condition={header.show === false}>
                   <div>
@@ -55,8 +55,8 @@ export const CustomizeTable = ({
 };
 
 CustomizeTable.propTypes = {
-  headers: PropTypes.arrayOf(PropTypes.shape({})),
+  applyCutstomization: PropTypes.func.isRequired,
   labelKey: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
-  applyCutstomization: PropTypes.func.isRequired,
+  headers: PropTypes.arrayOf(PropTypes.shape({})),
 };
