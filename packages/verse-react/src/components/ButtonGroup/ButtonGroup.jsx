@@ -12,7 +12,9 @@ export const ButtonGroup = ({
   return (
     <For each="group" index="idx" of={groups}>
       <button
-        className={activeGroup.includes(group) ? activeClass : inactiveClass}
+        className={
+          (activeGroup || []).includes(group) ? activeClass : inactiveClass
+        }
         key={`group_${idx}`}
         onClick={() => onClick(group)}
       >

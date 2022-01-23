@@ -1,191 +1,24 @@
 .light-theme {
   @import '../common/colors';
-  //WHITE_THEME
-  $primary: $teal300;
-  $primaryVariant: $cyan300;
-  $secondary: $teal400;
-  $secondaryVariant: $cyan400;
   $background: $white;
-  $surface: $white;
-  $error: $red400;
-  $onPrimary: $white;
-  $onSecondary: $white;
   $onBackground: $black;
-  $onSurface: $black;
+  $primary: $blue700;
+  $onPrimary: $white;
+  $secondary: $bluegray500;
+  $onSecondary: $white;
+  $success: $teal500;
+  $onSuccess: $white;
+  $warning: $yellow600;
+  $onWarning: $black;
+  $error: $deeporangeA700;
   $onError: $white;
+  $info: $lightblue500;
+  $onInfo: $white;
+  $link: $white;
+  $onLink: $lightblue600;
+  $border:$gray300;
   @import '../common/variables';
   @import '../base/componentBase';
   @import '../base/alignmentBase';
-  height: 100%;
-  color: $onBackground;
-  background-color: $background;
-  font: $global-text-font-size $global-font-family;
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
-
-  .inline {
-    display: inline;
-  }
-
-  .block {
-    display: block;
-  }
-
-  @include variants(
-    $variant-name: '.primary',
-    $bg-color: $blue700,
-    $color: $white
-  );
-
-  @include variants(
-    $variant-name: '.primary-outline',
-    $bg-color: $white,
-    $color: $blue700,
-    $outline: true
-  );
-
-  @include variants(
-    $variant-name: '.primary-form',
-    $bg-color: $white,
-    $color: $blue700,
-    $form: true
-  );
-
-  @include variants(
-    $variant-name: '.secondary',
-    $bg-color: $bluegray500,
-    $color: $white
-  );
-
-  @include variants(
-    $variant-name: '.secondary-outline',
-    $bg-color: $white,
-    $color: $bluegray500,
-    $outline: true
-  );
-
-  @include variants(
-    $variant-name: '.secondary-form',
-    $bg-color: $white,
-    $color: $bluegray500,
-    $form: true
-  );
-
-  @include variants(
-    $variant-name: '.success',
-    $bg-color: $teal500,
-    $color: $white
-  );
-
-  @include variants(
-    $variant-name: '.success-outline',
-    $bg-color: $white,
-    $color: $teal500,
-    $outline: true
-  );
-
-  @include variants(
-    $variant-name: '.success-form',
-    $bg-color: $white,
-    $color: $teal500,
-    $form: true
-  );
-
-  @include variants(
-    $variant-name: '.warning',
-    $bg-color: $yellow600,
-    $color: $black
-  );
-
-  @include variants(
-    $variant-name: '.warning-outline',
-    $bg-color: $white,
-    $color: $yellow600,
-    $outline: true
-  );
-
-  @include variants(
-    $variant-name: '.warning-form',
-    $bg-color: $white,
-    $color: $yellow600,
-    $form: true
-  );
-
-  @include variants(
-    $variant-name: '.error',
-    $bg-color: $deeporangeA700,
-    $color: $white
-  );
-
-  @include variants(
-    $variant-name: '.error-outline',
-    $bg-color: $white,
-    $color: $deeporangeA700,
-    $outline: true
-  );
-
-  @include variants(
-    $variant-name: '.error-form',
-    $bg-color: $white,
-    $color: $deeporangeA700,
-    $form: true
-  );
-
-  @include variants(
-    $variant-name: '.info',
-    $bg-color: $lightblue500,
-    $color: $white
-  );
-
-  @include variants(
-    $variant-name: '.info-outline',
-    $bg-color: $white,
-    $color: $lightblue500,
-    $outline: true
-  );
-
-  @include variants(
-    $variant-name: '.info-form',
-    $bg-color: $white,
-    $color: $lightblue500,
-    $form: true
-  );
-
-  @include variants(
-    $variant-name: '.link',
-    $bg-color: $white,
-    $color: $lightblue600,
-    $textDecor: underline
-  );
-
-  @include variants(
-    $variant-name: '.link-outline',
-    $bg-color: $lightblue600,
-    $color: $white,
-    $outline: true
-  );
-
-  @include icon(
-    $variant-name: '.primary-icon',
-    $invert: 36%,
-    $sepia: 85%,
-    $saturate: 712%,
-    $hue-rotate: 174deg,
-    $brightness: 94%,
-    $contrast: 105%
-  );
-  
-  @include icon(
-    $variant-name: '.secondary-icon',
-    $invert: 41%,
-    $sepia: 86%,
-    $saturate: 131%,
-    $hue-rotate: 174deg,
-    $brightness: 96%,
-    $contrast: 88%
-  );
+  @import '../components/main';
 }

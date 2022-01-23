@@ -1,0 +1,209 @@
+html,
+body {
+  height: 100%;
+  color: $onBackground;
+  background-color: $background;
+  font: $global-text-font-size $global-font-family;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+}
+
+.side-nav,
+.contents {
+  background-color: $background;
+  color: $onBackground;
+}
+
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+
+@include variants(
+  $variant-name: '.primary',
+  $bg-color: $primary,
+  $color: $onPrimary
+);
+
+@include variants(
+  $variant-name: '.primary-outline',
+  $bg-color: $onPrimary,
+  $color: $primary,
+  $outline: true
+);
+
+@include variants(
+  $variant-name: '.primary-form',
+  $bg-color: $onPrimary,
+  $color: $primary,
+  $form: true
+);
+
+@include variants(
+  $variant-name: '.secondary',
+  $bg-color: $secondary,
+  $color: $onSecondary
+);
+
+@include variants(
+  $variant-name: '.secondary-outline',
+  $bg-color: $onSecondary,
+  $color: $secondary,
+  $outline: true
+);
+
+@include variants(
+  $variant-name: '.secondary-form',
+  $bg-color: $onSecondary,
+  $color: $secondary,
+  $form: true
+);
+
+@include variants(
+  $variant-name: '.success',
+  $bg-color: $success,
+  $color: $onSuccess
+);
+
+@include variants(
+  $variant-name: '.success-outline',
+  $bg-color: $onSuccess,
+  $color: $success,
+  $outline: true
+);
+
+@include variants(
+  $variant-name: '.success-form',
+  $bg-color: $onSuccess,
+  $color: $success,
+  $form: true
+);
+
+@include variants(
+  $variant-name: '.warning',
+  $bg-color: $warning,
+  $color: $onWarning
+);
+
+@include variants(
+  $variant-name: '.warning-outline',
+  $bg-color: $onWarning,
+  $color: $warning,
+  $outline: true
+);
+
+@include variants(
+  $variant-name: '.warning-form',
+  $bg-color: $onWarning,
+  $color: $warning,
+  $form: true
+);
+
+@include variants($variant-name: '.error', $bg-color: $error, $color: $onError);
+
+@include variants(
+  $variant-name: '.error-outline',
+  $bg-color: $onError,
+  $color: $error,
+  $outline: true
+);
+
+@include variants(
+  $variant-name: '.error-form',
+  $bg-color: $onError,
+  $color: $error,
+  $form: true
+);
+
+@include variants($variant-name: '.info', $bg-color: $info, $color: $onInfo);
+
+@include variants(
+  $variant-name: '.info-outline',
+  $bg-color: $onInfo,
+  $color: $info,
+  $outline: true
+);
+
+@include variants(
+  $variant-name: '.info-form',
+  $bg-color: $onInfo,
+  $color: $info,
+  $form: true
+);
+
+@include variants(
+  $variant-name: '.link',
+  $bg-color: $link,
+  $color: $onLink,
+  $textDecor: underline
+);
+
+@include variants(
+  $variant-name: '.link-outline',
+  $bg-color: $onLink,
+  $color: $link,
+  $outline: true
+);
+
+@include icon(
+  $variant-name: '.primary-icon',
+  $invert: 36%,
+  $sepia: 85%,
+  $saturate: 712%,
+  $hue-rotate: 174deg,
+  $brightness: 94%,
+  $contrast: 105%
+);
+
+@include icon(
+  $variant-name: '.secondary-icon',
+  $invert: 41%,
+  $sepia: 86%,
+  $saturate: 131%,
+  $hue-rotate: 174deg,
+  $brightness: 96%,
+  $contrast: 88%
+);
+
+.richTextEditor {
+  width: 100%;
+  height: 450px;
+  border: 1px #e0e0e0 solid;
+  padding: 12px;
+  overflow: auto;
+  font-weight: 400;
+}
+.editorBar {
+  border: 1px #e0e0e0 solid;
+  padding: 4px;
+}
+.badge {
+  color: navy;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: honeydew;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 7px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.1s ease-in;
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:visited {
+    color: honeydew;
+    background-color: crimson;
+  }
+  .close-icon {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+}

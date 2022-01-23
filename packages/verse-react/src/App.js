@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { themes } from '@multiverses/verse-css/scss';
 
-import { Button } from 'components/Button';
+import { ButtonGroup } from 'components/ButtonGroup';
 import { Navbar } from 'components/Navigation/Navbar';
 import { SideNavigation } from 'components/Navigation/SideNavigation';
 import { Contents } from 'contents';
@@ -20,7 +20,7 @@ function App() {
       `@multiverses/verse-css/scss/themes${themes[theme]}.scss`
     );
   }, [theme]);
-
+  console.log(`theme`, theme);
   return (
     <div className={`${theme}-theme`}>
       <Navbar>
@@ -32,21 +32,18 @@ function App() {
             {/* <div className="m-r-8 w-400">
               <div className="gcse-search"></div>
             </div> */}
-            <Button
-              className="btn-alert"
-              onClick={() =>
-                theme === 'light'
-                  ? actions.setTheme('dark')
-                  : actions.setTheme('light')
-              }
-            >
-              {theme}
-            </Button>
+            <ButtonGroup
+              activeClass={`radio secondary`}
+              activeGroup={theme}
+              groups={['light', 'dark']}
+              inactiveClass={`radio secondary-outline`}
+              onClick={group => actions.setTheme(group)}
+            />
           </React.Fragment>
         </Navbar.NavItemRight>
       </Navbar>
       <div className="flex">
-        <div className="flex-25">
+        <div className="flex-25 side-nav">
           <SideNavigation
             contents={[
               'Accordion',
@@ -70,7 +67,7 @@ function App() {
             ]}
           />
         </div>
-        <div className="flex-75">
+        <div className="flex-75 contents">
           <Contents />
         </div>
       </div>

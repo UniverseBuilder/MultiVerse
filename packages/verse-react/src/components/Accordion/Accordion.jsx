@@ -34,7 +34,6 @@ export const Accordion = ({
   const childrenWithProps = React.Children.map(children, child => {
     if (React.isValidElement(child)) {
       return React.cloneElement(child, {
-        controlled,
         accordions,
         controls,
         handleAccordionClick,
@@ -44,7 +43,12 @@ export const Accordion = ({
   });
   return (
     <div className={className}>
-      <AccordionControls controls={controls} handleControls={handleControls}/>
+      <If condition={controlled}>
+        <AccordionControls
+          controls={controls}
+          handleControls={handleControls}
+        />
+      </If>
       {childrenWithProps}
     </div>
   );

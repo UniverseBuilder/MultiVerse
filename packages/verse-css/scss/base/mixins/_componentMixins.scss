@@ -22,7 +22,7 @@
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   touch-action: manipulation;
   &:hover {
-    opacity: 0.8;
+    filter: brightness(110%);
   }
   @if $transform {
     transform: translate3d(0px, 0px, 0px);

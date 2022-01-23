@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 export const SideNavigation = ({ contents }) => {
   return (
-    <div className="sidenav h-100VH">
+    <div className="sidenav">
       <div>
         <For each="content" index="idx" of={contents}>
           <div key={idx}>

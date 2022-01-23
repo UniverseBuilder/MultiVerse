@@ -1,33 +1,24 @@
 .dark-theme {
   @import '../common/colors';
-  //DARK_THEME
-  $primary: $teal300;
-  $primaryVariant: $cyan300;
-  $secondary: $teal400;
-  $secondaryVariant: $cyan400;
-  $background: $gray900;
-  $surface: $black;
-  $error: $red400;
-  $onPrimary: $white;
-  $onSecondary: $white;
+  $background: $black200;
   $onBackground: $white;
-  $onSurface: $black;
+  $primary: $blue700;
+  $onPrimary: $white;
+  $secondary: $black100;
+  $onSecondary: $white;
+  $success: $teal500;
+  $onSuccess: $white;
+  $warning: $yellow600;
+  $onWarning: $black;
+  $error: $deeporangeA700;
   $onError: $white;
+  $info: $lightblue500;
+  $onInfo: $white;
+  $link: $white;
+  $onLink: $lightblue600;
+  $border:$black100;
   @import '../common/variables';
   @import '../base/componentBase';
   @import '../base/alignmentBase';
-  height: 100%;
-  color: $onBackground;
-  background-color: $background;
-  font: $global-text-font-size $global-font-family;
-
-  .primary {
-    background-color: $white;
-    color: $orange800;
-  }
-
-  .success {
-    background-color: $white;
-    color: $green800;
-  }
+  @import '../components/main';
 }
