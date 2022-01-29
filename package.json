@@ -15,7 +15,9 @@
   "scripts": {
     "release": "cross-env lerna publish",
     "react": "yarn --cwd packages/verse-react start",
-    "react-build": "yarn --cwd packages/verse-react build"
+    "react:build": "yarn --cwd packages/verse-react build",
+    "react:build:es": "yarn --cwd packages/verse-react build:es",
+    "react:clean": "yarn --cwd packages/verse-react clean"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
