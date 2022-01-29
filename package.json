@@ -14,7 +14,15 @@
   },
   "scripts": {
     "release": "cross-env lerna publish --contents dist",
-    "react": "yarn --cwd packages/verse-react start"
+    "react": "yarn --cwd packages/verse-react start",
+    "build": "yarn run clean && yarn run dist:react",
+    "clean": "yarn run clean:react",
+    "dist:react": "yarn --cwd packages/verse-react dist",
+    "clean:css": "yarn --cwd packages/verse-css clean",
+    "clean:icon": "yarn --cwd packages/verse-icon clean",
+    "clean:react": "yarn --cwd packages/verse-react clean",
+    "clean:script": "yarn --cwd packages/verse-script clean",
+    "clean:utility": "yarn --cwd packages/verse-utility clean"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
