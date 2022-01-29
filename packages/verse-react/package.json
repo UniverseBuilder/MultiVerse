@@ -5,9 +5,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "es"
-  ],
   "dependencies": {
     "@babel/cli": "^7.16.8",
     "@babel/core": "^7.16.8",
