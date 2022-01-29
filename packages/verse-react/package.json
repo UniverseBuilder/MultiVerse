@@ -5,8 +5,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "main": "dist/es/index.js",
   "files": [
-    "dist/es/*"
+    "dist/es/"
   ],
   "dependencies": {
     "@babel/cli": "^7.16.8",
