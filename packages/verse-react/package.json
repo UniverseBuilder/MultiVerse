@@ -76,7 +76,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "prepublishOnly": "cross-env NODE_ENV=development babel src --out-dir dist copy \"package.json\" \"dist\" && copy \"README.md\" \"dist\"",
+    "prepublishOnly": "cross-env NODE_ENV=development babel src --out-dir dist && copy \"package.json\" \"dist\" && copy \"README.md\" \"dist\"",
     "test": "node scripts/test.js",
     "clean": "rimraf build && rimraf dist"
   },
