@@ -5,11 +5,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "package.json"
-  ],
   "dependencies": {
     "@babel/cli": "^7.16.8",
     "@babel/core": "^7.16.8",
