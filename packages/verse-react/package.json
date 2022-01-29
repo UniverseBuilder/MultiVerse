@@ -7,7 +7,9 @@
     "directory": "dist"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "package.json"
   ],
   "dependencies": {
     "@babel/cli": "^7.16.8",
