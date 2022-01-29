@@ -4,7 +4,7 @@
   "author": "UniverseBuilder",
   "publishConfig": {
     "access": "public",
-    "directory": "dist"
+    "directory": "dist/"
   },
   "files": [
     "dist",
