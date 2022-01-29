@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "author": "UniverseBuilder",
   "publishConfig": {
-    "access": "public",
-    "directory": "dist"
+    "access": "public"
   },
   "files": [
     "dist",
