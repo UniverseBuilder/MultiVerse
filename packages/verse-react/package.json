@@ -4,8 +4,11 @@
   "author": "UniverseBuilder",
   "publishConfig": {
     "access": "public",
-    "directory": "dist/es"
+    "directory": "dist"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@babel/cli": "^7.16.8",
     "@babel/core": "^7.16.8",
