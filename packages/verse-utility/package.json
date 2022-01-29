@@ -7,8 +7,7 @@
       "access": "public"
     },
     "scripts": {
-      "build": "yarn run copy:buildfiles",
-      "copy:buildfiles": "mkdir dist && copy \"package.json\" \"dist\" && copy \"README.md\" \"dist\"",
+      "prepublishOnly": "mkdir dist && copy \"package.json\" \"dist\" && copy \"README.md\" \"dist\"",
       "clean": "rimraf dist"
     }
   }

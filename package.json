@@ -15,7 +15,7 @@
   "scripts": {
     "release": "cross-env lerna publish --contents dist",
     "react": "yarn --cwd packages/verse-react start",
-    "build": "yarn run clean && yarn run css:build && yarn run icon:build && yarn run react:build:es && yarn run script:build && yarn run utility:build",
+    "build": "yarn run clean && yarn run react:build:es",
     "clean": "yarn run css:clean && yarn run icon:clean && yarn run react:clean && yarn run script:clean && yarn run utility:clean",
     "css:build": "yarn --cwd packages/verse-css build",
     "css:clean": "yarn --cwd packages/verse-css clean",
