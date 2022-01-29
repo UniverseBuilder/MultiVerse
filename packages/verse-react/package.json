@@ -5,6 +5,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "main": "dist/es/index.js",
+  "files": [
+    "dist/es/"
+  ],
   "dependencies": {
     "@babel/cli": "^7.16.8",
     "@babel/core": "^7.16.8",
@@ -75,7 +79,6 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "scripts": {
-    "prepublishOnly": "copy -r ./dist/* .",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "build:es": "cross-env NODE_ENV=development babel src --out-dir dist/es",
