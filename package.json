@@ -22,7 +22,8 @@
     "clean:icon": "yarn --cwd packages/verse-icon clean",
     "clean:react": "yarn --cwd packages/verse-react clean",
     "clean:script": "yarn --cwd packages/verse-script clean",
-    "clean:utility": "yarn --cwd packages/verse-utility clean"
+    "clean:utility": "yarn --cwd packages/verse-utility clean",
+    "postpublish": "yarn run clean"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",

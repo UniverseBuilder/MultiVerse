@@ -76,9 +76,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "prepublishOnly": "cross-env NODE_ENV=development babel src --out-dir dist && copy \"package.json\" \"dist\" && copy \"README.md\" \"dist\"",
-    "test": "node scripts/test.js",
-    "clean": "rimraf build && rimraf dist"
+    "dist": "cross-env NODE_ENV=development babel src --out-dir dist",
+    "prepublishOnly": "yarn run dist && copy \"package.json\" \"dist\" && copy \"README.md\" \"dist\"",
+    "clean": "rimraf dist"
   },
   "eslintConfig": {
     "extends": [
