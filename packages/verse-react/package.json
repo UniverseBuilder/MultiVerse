@@ -3,12 +3,9 @@
   "version": "0.0.0",
   "author": "UniverseBuilder",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "dist/es"
   },
-  "main": "dist/es/index.js",
-  "files": [
-    "dist/es/"
-  ],
   "dependencies": {
     "@babel/cli": "^7.16.8",
     "@babel/core": "^7.16.8",
