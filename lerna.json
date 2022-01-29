@@ -20,7 +20,8 @@
     "publish": {
       "conventionalCommits": true,
       "yes": true,
-      "canary": true
+      "canary": true,
+      "contents": "dist"
     }
   }
 }
