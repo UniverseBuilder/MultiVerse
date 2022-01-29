@@ -10,5 +10,10 @@
     "fs-extra": "^10.0.0",
     "sass": "^1.45.1",
     "util": "^0.12.4"
+  },
+  "scripts": {
+    "build": "yarn run copy:buildfiles",
+    "copy:buildfiles": "mkdir dist && copy \"package.json\" \"dist\" && copy \"README.md\" \"dist\" && xcopy /E/I \"scss\" \"dist/scss\"",
+    "clean": "rimraf dist"
   }
 }

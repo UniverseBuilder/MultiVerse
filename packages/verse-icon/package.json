@@ -5,5 +5,10 @@
   "author": "UniverseBuilder",
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "build": "yarn run copy:buildfiles",
+    "copy:buildfiles": "mkdir dist && copy \"package.json\" \"dist\" && copy \"README.md\" \"dist\" && xcopy /E/I \"icons\" \"dist/icons\"",
+    "clean": "rimraf dist"
   }
 }
