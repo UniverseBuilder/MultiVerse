@@ -5,6 +5,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "build"
+  ],
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@multiverses/verse-css": "^0.0.0",
