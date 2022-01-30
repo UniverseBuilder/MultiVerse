@@ -1,5 +1,6 @@
-import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
-import { fromIni } from '@aws-sdk/credential-provider-ini';
+const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');
+const { fromIni } = require('@aws-sdk/credential-provider-ini');
 
 const ddbClient = new DynamoDBClient({ credentials: fromIni() });
-export { ddbClient };
+
+module.exports = { ddbClient };
