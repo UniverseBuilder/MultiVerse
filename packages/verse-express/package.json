@@ -1,6 +1,11 @@
 {
   "name": "@multiverses/verse-express",
   "version": "0.0.0",
+  "main": "index.js",
+  "author": "UniverseBuilder",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "nodemon ./bin/www"
   },
