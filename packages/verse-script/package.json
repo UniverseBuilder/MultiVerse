@@ -7,7 +7,6 @@
     "access": "public"
   },
   "scripts": {
-    "prepublishOnly": "mkdir dist && copy \"package.json\" \"dist\" && copy \"README.md\" \"dist\" && xcopy /E/I \"config\" \"dist/config\" && xcopy /E/I \"scripts\" \"dist/scripts\"",
     "clean": "rimraf dist"
   }
 }

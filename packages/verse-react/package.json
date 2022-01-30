@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "author": "UniverseBuilder",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "dist"
   },
   "dependencies": {
     "@babel/cli": "^7.16.8",

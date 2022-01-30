@@ -17,7 +17,6 @@
     "util": "^0.12.4"
   },
   "scripts": {
-    "prepublishOnly": "mkdir dist && copy \"package.json\" \"dist\" && copy \"README.md\" \"dist\" && xcopy /E/I \"aws\" \"dist/aws\"",
     "clean": "rimraf dist"
   }
 }

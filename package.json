@@ -13,7 +13,7 @@
     "url": "https://github.com/UniverseBuilder/MultiVerse.git"
   },
   "scripts": {
-    "release": "cross-env lerna publish --contents dist",
+    "release": "cross-env lerna publish",
     "react": "yarn --cwd packages/verse-react start",
     "build": "yarn run clean && yarn run dist:react",
     "clean": "yarn run clean:css && yarn run clean:icon && yarn run clean:react && yarn run clean:script && yarn run clean:utility",
