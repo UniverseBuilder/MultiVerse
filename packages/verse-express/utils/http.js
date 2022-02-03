@@ -1,47 +1,43 @@
 const axios = require('axios').default;
 
-const http = async params => {
+const httpVerse = async params => {
   const {
     url,
-    route,
-    queryParams = [],
-    pathParams = [],
     method = 'GET',
     requestBody,
-    replacers = [],
-    reqHeaders = {},
+    headers = {},
+    onSuccess = () => null,
+    onError = () => null,
   } = params;
-  const headers = {
-    Accept: '*',
-    ...reqHeaders,
+  const reqHeaders = {
+    ...headers,
   };
   const urlParams = {
     method,
-    headers,
+    headers: reqHeaders,
   };
-  if (requestBody) {
-    urlParams.data = JSON.stringify(requestBody);
-    urlParams.headers['Content-Type'] = '*';
+  console.log(params);
+  if (params.data) {
+    urlParams.headers['Content-Type'] = 'application/json';
+    urlParams.data = JSON.stringify(params.data);
   }
-  result = await fetchData(apiPath, urlParams, apiBase);
+  console.log(urlParams);
+  result = await fetchData(url, urlParams, onSuccess, onError);
   return result;
 };
 
-const fetchData = async (apiPath, urlParams, apiBase) => {
-  const response = await axios({ url: apiPath, ...urlParams })
+const fetchData = async (url, urlParams, onSuccess, onError) => {
+  await axios({ url, ...urlParams })
     .then(async res => {
       console.log('RESPONSE:::::', res);
-      return {
-        data: res,
-      };
+      onSuccess(res);
     })
-    .catch(err => {
-      console.log('ERROR:::::', err);
-      return err;
+    .catch(error => {
+      console.log('ERROR:::::', error);
+      onError(error);
     });
-  return response;
 };
 
 module.exports = {
-  http,
+  httpVerse,
 };
