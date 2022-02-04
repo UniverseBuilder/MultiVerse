@@ -1,12 +1,16 @@
 @mixin flex {
   display: flex;
 }
+.flex-wrap {
+  @include flex;
+  flex-wrap: wrap;
+}
 
 .flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
 @mixin flex-items($flex: 1, $align: unset, $justify: unset, $minwidth: 0) {

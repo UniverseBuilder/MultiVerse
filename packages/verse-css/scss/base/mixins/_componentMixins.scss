@@ -14,6 +14,7 @@
   line-height: 1.5;
   font-size: 1rem;
   font-weight: 400;
+  width: 5rem;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
     Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -34,6 +35,7 @@
   @if $display == block {
     display: $display;
     border-radius: 0rem;
+    width: auto;
   }
   @if $flat == false {
     box-shadow: rgb(0 0 0 / 10%) 0 2px 4px 0;

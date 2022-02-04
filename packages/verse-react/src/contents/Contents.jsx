@@ -14,6 +14,7 @@ import { FormDocs } from './FormDocs';
 import { IconsDocs } from './IconsDocs';
 import { ImageDocs } from './ImageDocs';
 import { ListDocs } from './ListDocs';
+import { LoginDocs } from './LoginDocs';
 import { ModalDocs } from './ModalDocs';
 import { OverlayDocs } from './OverlayDocs';
 import { RenderHTMLDocs } from './RenderHTMLDocs';
@@ -23,7 +24,7 @@ import { TabsDocs } from './TabsDocs';
 export const Contents = () => {
   return (
     <Routes>
-      <Route element={<AccordionDocs />} path="/" />
+      <Route element={<LoginDocs />} path="/" />
       <Route element={<AccordionDocs />} path="/Accordion" />
       <Route element={<AlertDocs />} path="/Alert" />
       <Route element={<BadgeDocs />} path="/Badge" />

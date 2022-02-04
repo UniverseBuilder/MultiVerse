@@ -46,6 +46,7 @@ function App() {
         <div className="flex-25 side-nav">
           <SideNavigation
             contents={[
+              'Login',
               'Accordion',
               'Alert',
               'Badge',
