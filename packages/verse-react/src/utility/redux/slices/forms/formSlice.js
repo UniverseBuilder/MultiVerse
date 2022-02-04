@@ -39,12 +39,13 @@ export const formSlice = createSlice({
   extraReducers: {},
 });
 
-export const { setForm } = formSlice.actions;
+export const { setForm, resetForm } = formSlice.actions;
 
 export const useForm = () => {
   const dispatch = useDispatch();
   return {
     set: data => dispatch(setForm(data)),
+    reset: model => dispatch(setForm({ model, value: {} })),
   };
 };
 

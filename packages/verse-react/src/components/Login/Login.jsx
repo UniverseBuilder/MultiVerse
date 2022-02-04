@@ -2,15 +2,29 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { useForm } from '../../utility/hooks/useModel';
+import { decode, encode } from '../../utility/functions/encode';
+import { useModel } from '../../utility/hooks/useModel';
+import { useForm } from '../../utility/redux/slices/forms/formSlice';
 import { Button } from '../Button';
 import { Form } from '../Form';
 
 export const Login = ({ onLogin }) => {
-  const loginData = useForm('login');
+  const loginData = useModel('login');
+  const form = useForm();
 
   const onLoginClick = () => {
-    onLogin(loginData);
+    const encodedPwd = encode(loginData.password);
+    const creds = {
+      ...loginData,
+      password: encodedPwd,
+    };
+    onLogin();
+    form.reset('login');
+    console.log('Encrypted Data', creds);
+    console.log('Decrypted Data', {
+      ...loginData,
+      password: decode(encodedPwd),
+    });
   };
 
   return (
