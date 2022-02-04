@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Button } from 'components/Button';
-import { Form } from 'components/Form';
+import { Button } from '../Button';
+import { Form } from '../Form';
 
 export const Login = () => {
   return (

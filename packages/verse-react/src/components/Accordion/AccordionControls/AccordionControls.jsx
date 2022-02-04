@@ -2,7 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { ButtonGroup } from 'components/ButtonGroup';
+import { ButtonGroup } from '../../ButtonGroup';
 
 export const AccordionControls = ({ controls, handleControls }) => {
   return (

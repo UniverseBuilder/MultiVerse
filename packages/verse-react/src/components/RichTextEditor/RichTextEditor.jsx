@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import PropTypes from 'prop-types';
 
-import { RenderHTML } from 'components/RenderHTML';
-
+import { RenderHTML } from '../RenderHTML';
 import { EditorBar } from './EditorBar';
 
 
