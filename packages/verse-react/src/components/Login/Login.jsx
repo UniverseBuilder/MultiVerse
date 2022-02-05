@@ -15,7 +15,7 @@ export const Login = ({ onLogin, footer, tfa }) => {
     onLogin(loginData);
     form.set({
       model: 'login',
-      value: { username: '', password: '' },
+      value: {},
     });
   };
   console.log(loginData);
