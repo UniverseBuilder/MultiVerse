@@ -65,7 +65,7 @@ export const useApi = model => {
   console.log(model);
   const dispatch = useDispatch();
   return {
-    [model]: useSelector(state => state.api[model]),
+    [model]: useSelector(state => state.api?.[model]),
     [`${model}Call`]: data => dispatch(apiCall({ ...data, model })),
   };
 };
