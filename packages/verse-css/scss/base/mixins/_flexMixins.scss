@@ -40,3 +40,17 @@
     $i: $i + $offset;
   }
 }
+
+@mixin nflex-loop($className, $styleName) {
+  $max: 100;
+  $offset: 5;
+  $unit: '%'; // Feel free to change the unit.
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: 0 0 #{$i + $unit};
+      max-width: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
