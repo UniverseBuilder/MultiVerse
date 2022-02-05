@@ -3,7 +3,7 @@ import axios from 'axios';
 export const httpVerse = async params => {
   const {
     url,
-    method = 'GET',
+    method = 'POST',
     headers = {},
   } = params;
   console.log(params);
@@ -25,5 +25,6 @@ export const httpVerse = async params => {
 };
 
 const fetchData = async (url, urlParams) => {
+  console.log('EEEE', urlParams);
   await axios({ url, ...urlParams });
 };
