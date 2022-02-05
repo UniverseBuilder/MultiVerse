@@ -11,8 +11,8 @@ import { Form } from '../Form';
 export const Login = ({ onLogin, footer, tfa }) => {
   const loginData = useModel('login');
   const form = useForm();
-
-  const onLoginClick = () => {
+  const onLoginClick = (e) => {
+    e.preventDefault();
     const creds = {
       ...loginData,
       password: encode(loginData.password),
@@ -27,7 +27,6 @@ export const Login = ({ onLogin, footer, tfa }) => {
       },
     });
   };
-  console.log(loginData);
   return (
     <React.Fragment>
       <Form className="login flex-center p-x-16 m-x-8">

@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const Form = ({ children, className }) => {
-  return <div className={className}>{children}</div>;
+  return <form className={className}>{children}</form>;
 };
 
 Form.propTypes = {

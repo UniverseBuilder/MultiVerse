@@ -1,47 +1,59 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { httpVerse } from '../../../http/httpVerse';
 
 export const apiCall = createAsyncThunk('api/apiCall', async args => {
-  console.log('I AM IN API CALL')
-  const res = await httpVerse({
+  await httpVerse({
     ...args,
   })
     .then(res => {
-      return { data: res };
+      return res;
     })
     .catch(err => {
-      return {
-        data: err,
-      };
+      throw err;
     });
-  return {
-    data: res,
-  };
 });
 
 export const apiSlice = createSlice({
   name: 'api',
-  initialState: {},
+  initialState: {
+    api: {},
+  },
   reducers: {},
   extraReducers: {
     [apiCall.fulfilled]: (state, action) => {
       return {
         ...state,
-        loading: false,
-        ...action.payload,
+        ...{
+          [action.meta.arg.model]: {
+            payload: action.payload,
+            loading: false,
+            error: {},
+          },
+        },
       };
     },
-    [apiCall.pending]: state => {
-      return { ...state, loading: true, error: {} };
+    [apiCall.pending]: (state, action) => {
+      return {
+        ...state,
+        ...{
+          [action.meta.arg.model]: {
+            loading: true,
+            error: {},
+          },
+        },
+      };
     },
     [apiCall.rejected]: (state, action) => {
       return {
         ...state,
-        message: '',
-        error: action.error,
-        loading: false,
+        ...{
+          [action.meta.arg.model]: {
+            loading: false,
+            error: action.error,
+          },
+        },
       };
     },
   },
@@ -49,10 +61,12 @@ export const apiSlice = createSlice({
 
 export const { setResponse } = apiSlice.actions;
 
-export const useApiCall = () => {
+export const useApi = model => {
+  console.log(model);
   const dispatch = useDispatch();
   return {
-    apiCall: data => dispatch(apiCall(data)),
+    [model]: useSelector(state => state.api[model]),
+    [`${model}Call`]: data => dispatch(apiCall({ ...data, model })),
   };
 };
 

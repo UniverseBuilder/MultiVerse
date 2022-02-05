@@ -1,12 +1,10 @@
-import { axios } from 'axios';
+import axios from 'axios';
 
 export const httpVerse = async params => {
   const {
     url,
     method = 'GET',
     headers = {},
-    onSuccess = () => null,
-    onError = () => null,
   } = params;
   console.log(params);
   const reqHeaders = {
@@ -22,18 +20,10 @@ export const httpVerse = async params => {
     urlParams.data = JSON.stringify(params.data);
   }
   console.log(urlParams);
-  const result = await fetchData(url, urlParams, onSuccess, onError);
+  const result = await fetchData(url, urlParams);
   return result;
 };
 
-const fetchData = async (url, urlParams, onSuccess, onError) => {
-  await axios({ url, ...urlParams })
-    .then(async res => {
-      console.log('RESPONSE:::::', res);
-      onSuccess(res);
-    })
-    .catch(error => {
-      console.log('ERROR:::::', error);
-      onError(error);
-    });
+const fetchData = async (url, urlParams) => {
+  await axios({ url, ...urlParams });
 };
