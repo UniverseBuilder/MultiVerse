@@ -21,6 +21,7 @@ export const Login = ({ onLogin, footer }) => {
     onLogin(creds);
     form.reset('login');
   };
+  console.log(loginData);
 
   return (
     <React.Fragment>
