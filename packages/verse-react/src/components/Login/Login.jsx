@@ -18,11 +18,10 @@ export const Login = ({ onLogin, footer }) => {
       ...loginData,
       password: encodedPwd,
     };
-    onLogin(creds);
     form.reset('login');
+    onLogin(creds);
   };
   console.log(loginData);
-
   return (
     <React.Fragment>
       <Form className="login flex-center p-x-16 m-x-8">

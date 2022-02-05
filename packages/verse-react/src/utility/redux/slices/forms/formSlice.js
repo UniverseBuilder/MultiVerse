@@ -56,7 +56,7 @@ export const useForm = () => {
   const dispatch = useDispatch();
   return {
     set: data => dispatch(setForm(data)),
-    reset: model => dispatch(resetForm({ model, value: {}, overWrite: true })),
+    reset: model => dispatch(resetForm({ model, value: {} })),
   };
 };
 
