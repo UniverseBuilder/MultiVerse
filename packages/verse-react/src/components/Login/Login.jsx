@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 import { Button } from '../Button';
 import { Form } from '../Form';
 
-export const Login = ({ footer, tfa }) => {
+export const Login = ({ onLogin, footer, tfa }) => {
   return (
     <React.Fragment>
       <Form className="login flex-center p-x-16 m-x-8">
         <Form.Wrapper className="flex-wrap flex-center gutter p-x-32">
           <Form.Label>Username</Form.Label>
           <Form.Input
-            autoComplete="username"
+            autoComplete="off"
             model="login.username"
             placeholder="User Name"
           />
@@ -31,7 +31,9 @@ export const Login = ({ footer, tfa }) => {
               placeholder={tfa.placeholder}
             />
           </If>
-          <Button className="btn-block secondary m-t-16">Login</Button>
+          <Button className="btn-block secondary m-t-16" onClick={onLogin}>
+            Login
+          </Button>
         </Form.Wrapper>
       </Form>
       {footer}
@@ -41,6 +43,7 @@ export const Login = ({ footer, tfa }) => {
 
 Login.propTypes = {
   footer: PropTypes.node,
+  onLogin: PropTypes.func,
   tfa: PropTypes.shape({
     label: PropTypes.string,
     model: PropTypes.string,
@@ -51,5 +54,6 @@ Login.propTypes = {
 
 Login.defaultProps = {
   footer: null,
+  onLogin: () => null,
   tfa: null,
 };

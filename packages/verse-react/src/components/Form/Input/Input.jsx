@@ -7,7 +7,6 @@ import { useForm } from 'utility/redux/slices/forms/formSlice';
 
 
 export const Input = ({
-  id,
   model,
   type,
   className,
@@ -44,7 +43,7 @@ export const Input = ({
       autoComplete={autoComplete}
       className={className}
       disabled={disabled}
-      id={id}
+      id={model}
       onBlur={onBlur}
       onChange={handleChange}
       onFocus={onFocus}
@@ -62,7 +61,6 @@ Input.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   disabled: PropTypes.bool,
-  id: PropTypes.string,
   model: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
@@ -77,7 +75,6 @@ Input.propTypes = {
 Input.defaultProps = {
   className: 'form-input secondary-form',
   defaultValue: '',
-  id: 'input-element',
   onBlur: () => null,
   onChange: () => null,
   onMouseDown: () => null,
