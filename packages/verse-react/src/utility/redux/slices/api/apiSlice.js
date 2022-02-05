@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { httpVerse } from '../../../http/httpVerse';
 
 export const apiCall = createAsyncThunk('api/apiCall', async args => {
+  console.log('I AM IN API CALL')
   const res = await httpVerse({
     ...args,
   })
