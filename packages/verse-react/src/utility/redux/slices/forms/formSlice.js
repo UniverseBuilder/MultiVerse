@@ -2,6 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import merge from 'deepmerge';
 import { useDispatch } from 'react-redux';
 
+import { byString } from '../../../functions';
+
 const overWriteMerge = (target, source) => {
   const destination = target.slice();
   source.forEach(item => {
@@ -37,14 +39,20 @@ export const formSlice = createSlice({
     },
     resetForm: (state, { payload: model }) => {
       var i,
-        obj = { ...state.form },
+        obj = {},
         strArr = model.split('.');
       var x = obj;
       for (i = 0; i < strArr.length - 1; i++) {
         x = x[strArr[i]] = {};
       }
-      x[strArr[i]] = { username: '', password: '' };
-      return { form: obj };
+      const newObj = Object.keys(byString(state.form, model)).reduce(
+        (accumulator, key) => {
+          return { ...accumulator, [key]: '' };
+        },
+        {}
+      );
+      x[strArr[i]] = newObj;
+      return { form: merge(state.form, obj) };
     },
   },
   extraReducers: {},

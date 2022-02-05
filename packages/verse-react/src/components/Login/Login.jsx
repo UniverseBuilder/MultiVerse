@@ -13,10 +13,7 @@ export const Login = ({ onLogin, footer, tfa }) => {
 
   const onLoginClick = () => {
     onLogin(loginData);
-    form.set({
-      model: 'login',
-      value: {},
-    });
+    form.reset('login');
   };
   console.log(loginData);
   return (
