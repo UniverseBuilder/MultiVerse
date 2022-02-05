@@ -8,15 +8,15 @@ export const apiCall = createAsyncThunk('api/apiCall', async args => {
     ...args,
   })
     .then(res => {
-      return { [args.model]: res };
+      return { data: res };
     })
     .catch(err => {
       return {
-        [args.model]: err,
+        data: err,
       };
     });
   return {
-    [args.model]: res,
+    data: res,
   };
 });
 

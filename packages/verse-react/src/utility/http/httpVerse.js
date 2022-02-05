@@ -8,6 +8,7 @@ export const httpVerse = async params => {
     onSuccess = () => null,
     onError = () => null,
   } = params;
+  console.log(params);
   const reqHeaders = {
     ...headers,
   };
