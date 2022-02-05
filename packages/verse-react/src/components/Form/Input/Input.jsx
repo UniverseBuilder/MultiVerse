@@ -23,7 +23,6 @@ export const Input = ({
 }) => {
   const value = useModel(model);
   const { set } = useForm();
-
   const handleChange = e => {
     if (type === 'number') {
       set({ model, value: Number(e.target.value) });

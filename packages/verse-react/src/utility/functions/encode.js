@@ -1,4 +1,4 @@
-export const encode = data => {
+export const encode = (data = '') => {
   let hex, i;
   let result = '';
   for (i = 0; i < data.length; i++) {
@@ -8,7 +8,7 @@ export const encode = data => {
   return btoa(result);
 };
 
-export const decode = encodedString => {
+export const decode = (encodedString = '') => {
   let data = atob(encodedString);
   let j;
   let hexes = data.match(/.{1,4}/g) || [];
