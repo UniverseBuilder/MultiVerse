@@ -2,6 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import { encode } from '../../utility/functions/encode';
 import { useModel } from '../../utility/hooks/useModel';
 import { useForm } from '../../utility/redux/slices/forms/formSlice';
 import { Button } from '../Button';
@@ -12,8 +13,19 @@ export const Login = ({ onLogin, footer, tfa }) => {
   const form = useForm();
 
   const onLoginClick = () => {
-    onLogin(loginData);
-    form.reset('login');
+    const creds = {
+      ...loginData,
+      password: encode(loginData.password),
+    };
+    onLogin(creds);
+    form.set({
+      model: 'login',
+      value: {
+        username: '',
+        password: '',
+        ...(tfa && tfa.model && { [tfa.model]: '' }),
+      },
+    });
   };
   console.log(loginData);
   return (
