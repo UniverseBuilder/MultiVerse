@@ -2,10 +2,20 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import { useModel } from '../../utility/hooks/useModel';
+import { useForm } from '../../utility/redux/slices/forms/formSlice';
 import { Button } from '../Button';
 import { Form } from '../Form';
 
 export const Login = ({ onLogin, footer, tfa }) => {
+  const loginData = useModel('login');
+  const form = useForm();
+
+  const onLoginClick = () => {
+    onLogin(loginData);
+    form.reset('login');
+  };
+  console.log(loginData);
   return (
     <React.Fragment>
       <Form className="login flex-center p-x-16 m-x-8">
@@ -31,7 +41,7 @@ export const Login = ({ onLogin, footer, tfa }) => {
               placeholder={tfa.placeholder}
             />
           </If>
-          <Button className="btn-block secondary m-t-16" onClick={onLogin}>
+          <Button className="btn-block secondary m-t-16" onClick={onLoginClick}>
             Login
           </Button>
         </Form.Wrapper>

@@ -35,8 +35,7 @@ export const formSlice = createSlice({
       }
       return { form: merge(state.form, obj) };
     },
-    resetForm: (state, { payload: { model, value = {} } }) => {
-      console.log('Iam here');
+    resetForm: (state, { payload: model }) => {
       var i,
         obj = { ...state.form },
         strArr = model.split('.');
@@ -44,8 +43,7 @@ export const formSlice = createSlice({
       for (i = 0; i < strArr.length - 1; i++) {
         x = x[strArr[i]] = {};
       }
-      x[strArr[i]] = value;
-      console.log('Iam here 2');
+      x[strArr[i]] = { username: '', password: '' };
       return { form: obj };
     },
   },
@@ -58,7 +56,7 @@ export const useForm = () => {
   const dispatch = useDispatch();
   return {
     set: data => dispatch(setForm(data)),
-    reset: data => dispatch(resetForm(data)),
+    reset: model => dispatch(resetForm(model)),
   };
 };
 
