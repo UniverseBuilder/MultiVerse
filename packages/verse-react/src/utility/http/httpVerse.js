@@ -1,11 +1,9 @@
 import axios from 'axios';
 
+import { sessionStorage } from 'utility/storage';
+
 export const httpVerse = async params => {
-  const {
-    url,
-    method = 'POST',
-    headers = {},
-  } = params;
+  const { url, method = 'POST', headers = {} } = params;
   console.log(params);
   const reqHeaders = {
     ...headers,
@@ -19,12 +17,22 @@ export const httpVerse = async params => {
     urlParams.headers['Content-Type'] = 'application/json';
     urlParams.data = JSON.stringify(params.data);
   }
+  let result;
   console.log(urlParams);
-  const result = await fetchData(url, urlParams);
+  const cacheKey = `${params.model}${JSON.stringify(params.data)}`;
+  if (params.cache && !params.refreshCache) {
+    result = sessionStorage.get(cacheKey, result);
+    if (result) {
+      return result;
+    }
+  }
+  result = await fetchData(url, urlParams);
+  if (params.cache) {
+    sessionStorage.set(cacheKey, result);
+  }
   return result;
 };
 
 const fetchData = async (url, urlParams) => {
-  console.log('EEEE', urlParams);
   await axios({ url, ...urlParams });
 };
