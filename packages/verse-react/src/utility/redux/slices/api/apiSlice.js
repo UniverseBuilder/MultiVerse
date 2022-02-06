@@ -8,9 +8,11 @@ export const apiCall = createAsyncThunk('api/apiCall', async args => {
     ...args,
   })
     .then(res => {
+      console.log('\u001b[1;34m SUCCESS_SLICE ::: ', res);
       return res;
     })
     .catch(err => {
+      console.log('\u001b[1;36m ERROR_SLICE ::: ', err);
       throw err;
     });
 });
