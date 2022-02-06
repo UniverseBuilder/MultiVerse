@@ -36,7 +36,7 @@ export const httpVerse = async params => {
 };
 
 const fetchData = async (url, urlParams) => {
-  const result = await axios({ url, ...urlParams })
+  const result = await axios({ url, ...urlParams, withCrdentials: true })
     .then(res => {
       console.log('\u001b[1;32m RESPONSE_FETCH ::: ', res);
       return res;
