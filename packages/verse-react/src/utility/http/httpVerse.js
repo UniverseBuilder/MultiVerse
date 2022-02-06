@@ -4,7 +4,6 @@ import { sessionStorage } from '../storage';
 
 export const httpVerse = async params => {
   const { url, method = 'POST', headers = {} } = params;
-  console.log(params);
   const reqHeaders = {
     ...headers,
   };
@@ -18,7 +17,7 @@ export const httpVerse = async params => {
   }
   let result;
   console.log('\u001b[1;31m URL_PARAMS ::: ', urlParams);
-  const cacheKey = `${params.model}${JSON.stringify(params.data)}`;
+  const cacheKey = `${params.model}`;
   console.log('\u001b[1;33m CACHE ::: ', params.cache, params.cacheKey);
   if (params.cache && !params.refreshCache) {
     result = sessionStorage.get(cacheKey, result);

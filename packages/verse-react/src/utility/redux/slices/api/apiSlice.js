@@ -20,9 +20,7 @@ export const apiCall = createAsyncThunk('api/apiCall', async args => {
 
 export const apiSlice = createSlice({
   name: 'api',
-  initialState: {
-    api: {},
-  },
+  initialState: {},
   reducers: {},
   extraReducers: {
     [apiCall.fulfilled]: (state, action) => {
@@ -30,7 +28,7 @@ export const apiSlice = createSlice({
         ...state,
         ...{
           [action.meta.arg.model]: {
-            payload: action.payload,
+            data: action.payload,
             loading: false,
             error: {},
           },
@@ -65,10 +63,9 @@ export const apiSlice = createSlice({
 export const { setResponse } = apiSlice.actions;
 
 export const useApi = model => {
-  console.log(model);
   const dispatch = useDispatch();
   return {
-    [model]: useSelector(state => state.api),
+    [model]: useSelector(state => state.api?.[model] || {}),
     [`${model}Call`]: data => dispatch(apiCall({ ...data, model })),
   };
 };
