@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { httpVerse } from '../../../http/httpVerse';
 
 export const apiCall = createAsyncThunk('api/apiCall', async args => {
-  await httpVerse({
+  const result = await httpVerse({
     ...args,
   })
     .then(res => {
@@ -15,6 +15,7 @@ export const apiCall = createAsyncThunk('api/apiCall', async args => {
       console.log('\u001b[1;36m ERROR_SLICE ::: ', err);
       throw err;
     });
+  return result;
 });
 
 export const apiSlice = createSlice({
