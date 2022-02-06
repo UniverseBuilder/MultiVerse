@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import PropTypes from 'prop-types';
 
-import { useForm } from 'utility/redux/slices/forms/formSlice';
+import { useForm } from '../../../../utility/redux/slices/forms/formSlice';
 
 export const Radio = ({
   id,

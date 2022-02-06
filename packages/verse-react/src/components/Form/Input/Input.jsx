@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 
 import PropTypes from 'prop-types';
 
-import { useModel } from 'utility/hooks';
-import { useForm } from 'utility/redux/slices/forms/formSlice';
+import { useModel } from '../../../utility/hooks';
+import { useForm } from '../../../utility/redux/slices/forms/formSlice';
 
 
 export const Input = ({

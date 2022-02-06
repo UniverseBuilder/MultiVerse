@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { sessionStorage } from 'utility/storage';
+import { sessionStorage } from '../storage';
 
 export const httpVerse = async params => {
   const { url, method = 'POST', headers = {} } = params;
