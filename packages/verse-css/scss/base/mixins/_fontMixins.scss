@@ -16,8 +16,10 @@
     background-color: $bg-color;
     color: $color;
     text-decoration: $textDecor;
-    &:hover {
-      background-color: darken($bg-color, 5%);
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken($bg-color, 3%);
     }
     @if $outline {
       border: 1px solid $color;
