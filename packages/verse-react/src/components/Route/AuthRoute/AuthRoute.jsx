@@ -1,14 +1,19 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import { Navigate, Route } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 
-export const AuthRoute = ({ auth, fallback, ...props }) => {
-  const routeProps = { ...props };
-  if (!auth) {
-    props.element = <Navigate replace to={fallback} />;
-  }
-  return <Route {...routeProps} />;
+export const AuthRoute = ({ auth, fallback }) => {
+  return (
+    <Choose>
+      <When condition={auth}>
+        <Outlet />
+      </When>
+      <Otherwise>
+        <Navigate replace to={fallback} />
+      </Otherwise>
+    </Choose>
+  );
 };
 
 AuthRoute.propTypes = {
