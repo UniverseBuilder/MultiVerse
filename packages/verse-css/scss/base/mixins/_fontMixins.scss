@@ -16,6 +16,9 @@
     background-color: $bg-color;
     color: $color;
     text-decoration: $textDecor;
+    &:hover {
+      background-color: darken($bg-color, 5%);
+    }
     @if $outline {
       border: 1px solid $color;
       &:hover {

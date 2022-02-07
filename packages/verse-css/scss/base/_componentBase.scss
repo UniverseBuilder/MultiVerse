@@ -216,3 +216,14 @@
 .login {
   box-shadow: rgb(0 0 0 / 15%) 0 3px 9px 0;
 }
+
+.profile {
+  .profile-picture {
+    position: relative;
+  }
+  .profile-content {
+    position: absolute;
+    border-radius: 2px;
+    margin-top: 4px;
+  }
+}

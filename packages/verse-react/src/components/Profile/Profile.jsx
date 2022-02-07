@@ -2,32 +2,36 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { getInitials } from '../../utility/functions/stringParsers';
+import { useModel } from '../../utility/hooks';
+import { useForm } from '../../utility/redux/slices/forms/formSlice';
 
-export const Profile = ({ className, radius, initials, fullName }) => {
-  let profileText = initials;
-  if (fullName) {
-    profileText = getInitials(fullName);
-  }
-  return (
-    <div className="profile">
-      <div className="profile-pricture">
-        <div className={`${className} r-${radius}`}>{profileText}</div>
-      </div>
-    </div>
-  );
+export const Profile = ({ model, children }) => {
+  const showContent = useModel(model);
+  const { set } = useForm();
+
+  const handleProfileClick = () => {
+    set({ model, value: !showContent });
+  };
+
+  const childrenWithProps = React.Children.map(children, child => {
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, {
+        showContent,
+        handleProfileClick,
+      });
+    }
+    return child;
+  });
+
+  return <div className="profile">{childrenWithProps}</div>;
 };
 
 Profile.propTypes = {
-  className: PropTypes.string,
-  fullName: PropTypes.string,
-  initials: PropTypes.string,
-  radius: PropTypes.number,
+  children: PropTypes.node.isRequired,
+  model: PropTypes.string,
 };
 
 Profile.defaultProps = {
-  className: 'primary f-1 fb-600 flex-center',
-  fullName: 'Balasundaram   Shankar',
-  initials: '',
-  radius: 52,
+  controlled: false,
+  model: 'profile',
 };

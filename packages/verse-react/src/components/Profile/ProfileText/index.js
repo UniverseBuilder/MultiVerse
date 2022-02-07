@@ -1,0 +1,1 @@
+export { ProfileText } from './ProfileText';
