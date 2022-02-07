@@ -28,3 +28,34 @@
     $i: $i + $offset;
   }
 }
+
+@mixin radius-loop($className) {
+  $max: 100;
+  $offset: 4;
+  $unit: 'px'; // Feel free to change the unit.
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      width: #{$i + $unit};
+      height: #{$i + $unit};
+      border-radius: 50%;
+    }
+    $i: $i + $offset;
+  }
+}
+
+@mixin font-loop(
+  $className,
+  $styleName,
+  $unit: px,
+  $max: 30,
+  $offset: 1,
+  $i: 0
+) {
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}

@@ -17,6 +17,7 @@ import { ListDocs } from './ListDocs';
 import { LoginDocs } from './LoginDocs';
 import { ModalDocs } from './ModalDocs';
 import { OverlayDocs } from './OverlayDocs';
+import { ProfileDocs } from './ProfileDocs';
 import { RenderHTMLDocs } from './RenderHTMLDocs';
 import { RichTextEditorDocs } from './RichTextEditorDocs';
 import { TabsDocs } from './TabsDocs';
@@ -24,7 +25,8 @@ import { TabsDocs } from './TabsDocs';
 export const Contents = () => {
   return (
     <Routes>
-      <Route element={<LoginDocs />} path="/" />
+      <Route element={<ProfileDocs />} path="/" />
+      <Route element={<LoginDocs />} path="/Login" />
       <Route element={<AccordionDocs />} path="/Accordion" />
       <Route element={<AlertDocs />} path="/Alert" />
       <Route element={<BadgeDocs />} path="/Badge" />

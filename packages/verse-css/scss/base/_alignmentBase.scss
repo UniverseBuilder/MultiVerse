@@ -23,6 +23,27 @@
 @include sizing-loop('.w-', 'width');
 @include sizing-loop('.h-', 'height');
 
+// Radius
+@include radius-loop('.r-');
+
+// Font Sizes
+@include font-loop(
+  $className: '.f-',
+  $styleName:font-size,
+  $unit: rem,
+  $max:5,
+  $i:1,
+);
+
+// Font Bolds
+@include font-loop(
+  $className: '.fb-',
+  $styleName:font-weight,
+  $unit: '',
+  $max:900,
+  $i:100
+);
+
 .text-center {
   text-align: center;
 }
