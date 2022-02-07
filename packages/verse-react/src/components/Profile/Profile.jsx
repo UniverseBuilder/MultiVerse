@@ -11,7 +11,9 @@ export const Profile = ({ model, onClick, children }) => {
 
   const handleProfileClick = () => {
     set({ model, value: !showContent });
-    onClick(showContent);
+    if (!showContent) {
+      onClick(showContent);
+    }
   };
 
   const childrenWithProps = React.Children.map(children, child => {

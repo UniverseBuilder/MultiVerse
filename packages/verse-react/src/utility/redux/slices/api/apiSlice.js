@@ -28,7 +28,7 @@ export const apiSlice = createSlice({
         ...state,
         ...{
           [action.meta.arg.model]: {
-            data: action.payload,
+            ...action.payload,
             loading: false,
             error: {},
           },

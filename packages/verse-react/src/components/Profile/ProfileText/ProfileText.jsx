@@ -32,8 +32,8 @@ ProfileText.propTypes = {
   className: PropTypes.string,
   fullName: PropTypes.string,
   handleProfileClick: PropTypes.func,
-  initials: PropTypes.string,
-  radius: PropTypes.number,
+  initials: PropTypes.any,
+  radius: PropTypes.any,
 };
 
 ProfileText.defaultProps = {
