@@ -64,10 +64,11 @@ export const { setResponse } = apiSlice.actions;
 
 export const useApi = model => {
   const dispatch = useDispatch();
-  return {
-    [model]: useSelector(state => state.api?.[model] || {}),
-    [`${model}Call`]: data => dispatch(apiCall({ ...data, model })),
-  };
+  return data => dispatch(apiCall({ ...data, model }));
+};
+
+export const useApiState = model => {
+  return useSelector(state => state.api?.[model] || {});
 };
 
 export default apiSlice.reducer;
