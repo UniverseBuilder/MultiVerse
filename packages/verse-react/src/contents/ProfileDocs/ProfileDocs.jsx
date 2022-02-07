@@ -6,7 +6,7 @@ export const ProfileDocs = () => {
   return (
     <Profile>
       <Profile.Text fullName="B Shankar Krishna" />
-      <Profile.Content>ABC</Profile.Content>
+      <Profile.Content>ABCDEFGHIJKMNOPQRS</Profile.Content>
     </Profile>
   );
 };

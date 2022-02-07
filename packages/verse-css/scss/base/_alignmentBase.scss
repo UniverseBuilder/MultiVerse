@@ -29,19 +29,19 @@
 // Font Sizes
 @include font-loop(
   $className: '.f-',
-  $styleName:font-size,
+  $styleName: font-size,
   $unit: rem,
-  $max:5,
-  $i:1,
+  $max: 5,
+  $i: 1
 );
 
 // Font Bolds
 @include font-loop(
   $className: '.fb-',
-  $styleName:font-weight,
+  $styleName: font-weight,
   $unit: '',
-  $max:900,
-  $i:100
+  $max: 900,
+  $i: 100
 );
 
 .text-center {
@@ -75,7 +75,23 @@
   transform: translateY(25%);
 }
 
-// cursor pointer 
+// cursor pointer
 .c-pointer {
-  cursor:pointer
+  cursor: pointer;
+}
+
+.top {
+  top: 0px;
+}
+
+.right {
+  right: 0px;
+}
+
+.left {
+  left: 0px;
+}
+
+.bottom {
+  bottom: 0px;
 }

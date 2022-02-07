@@ -29,9 +29,9 @@ export const ProfileText = ({
 };
 
 ProfileText.propTypes = {
-  handleProfileClick: PropTypes.func.isRequired,
   className: PropTypes.string,
   fullName: PropTypes.string,
+  handleProfileClick: PropTypes.func,
   initials: PropTypes.string,
   radius: PropTypes.number,
 };
