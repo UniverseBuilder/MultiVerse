@@ -16,11 +16,14 @@
   }
 }
 
-@mixin sizing-loop($className, $styleName) {
-  $max: 400;
-  $offset: 40;
-  $unit: 'px'; // Feel free to change the unit.
-  $i: 0;
+@mixin sizing-loop(
+  $className,
+  $styleName,
+  $unit: px,
+  $max: 400,
+  $offset: 40,
+  $i: 0
+) {
   @while $i <= $max {
     #{$className + $i} {
       #{$styleName}: #{$i + $unit};

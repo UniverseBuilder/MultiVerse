@@ -20,6 +20,14 @@
 @include spacing-loop('.p-x-', 'padding');
 
 // Width, Height
+@include sizing-loop(
+  $className: '.wpct-',
+  $styleName: width,
+  $unit: '%',
+  $max: 100,
+  $offset: 1,
+  $i: 0
+);
 @include sizing-loop('.w-', 'width');
 @include sizing-loop('.h-', 'height');
 
