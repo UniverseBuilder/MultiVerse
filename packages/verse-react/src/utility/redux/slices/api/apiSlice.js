@@ -53,7 +53,7 @@ export const apiSlice = createSlice({
         ...{
           [action.meta.arg.model]: {
             [action.meta.arg.model]: {},
-            error: action,
+            error: action.error,
             loading: false,
           },
         },

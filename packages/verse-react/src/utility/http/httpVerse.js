@@ -42,8 +42,8 @@ const fetchData = async (url, urlParams) => {
       return res;
     })
     .catch(error => {
-      console.log('\u001b[1;31m ERROR_FETCH ::: ', error);
-      throw error;
+      console.log('\u001b[1;31m ERROR_FETCH ::: ', error.response);
+      throw error.response;
     });
   return result;
 };
