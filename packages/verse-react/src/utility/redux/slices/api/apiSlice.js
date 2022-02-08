@@ -12,8 +12,8 @@ export const apiCall = createAsyncThunk('api/apiCall', async args => {
       return res.data;
     })
     .catch(err => {
-      console.log('\u001b[1;36m ERROR_SLICE ::: ', err);
-      throw err;
+      console.log('\u001b[1;36m ERROR_SLICE ::: ', err.data);
+      throw err.data;
     });
   return result;
 });
