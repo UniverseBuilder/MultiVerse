@@ -29,8 +29,8 @@ export const httpVerse = async params => {
   result = await fetchData(url, urlParams);
   console.log('\u001b[1;32m RESPONSE ::: ', result);
   if (params.cache) {
-    console.log('\u001b[1;36m SETTING_CACHE ::: ', result);
-    sessionStorage.set(cacheKey, result);
+    console.log('\u001b[1;36m SETTING_CACHE ::: ', result.data);
+    sessionStorage.set(cacheKey, result.data);
   }
   return result;
 };
