@@ -3,7 +3,7 @@ import axios from 'axios';
 import { sessionStorage } from '../storage';
 
 export const httpVerse = async params => {
-  const { url, method = 'POST', headers = {} } = params;
+  const { url, method = 'POST', headers = {}, onSuccess } = params;
   const reqHeaders = {
     ...headers,
   };
@@ -27,6 +27,9 @@ export const httpVerse = async params => {
     }
   }
   result = await fetchData(url, urlParams);
+  if (onSuccess) {
+    result = onSuccess(result);
+  }
   console.log('\u001b[1;32m RESPONSE ::: ', result);
   if (params.cache) {
     console.log('\u001b[1;36m SETTING_CACHE ::: ', result);
