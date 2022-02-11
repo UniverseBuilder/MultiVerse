@@ -28,7 +28,7 @@ export const Input = ({
     } else {
       set({ model, value: e.target.value });
     }
-    onChange();
+    onChange(e);
   };
 
   useEffect(() => {
