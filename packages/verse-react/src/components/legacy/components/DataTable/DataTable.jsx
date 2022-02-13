@@ -88,6 +88,9 @@ export const DataTable = ({
     }
   }, [columnData, sortBy, sortDirection]);
 
+  console.log('#####', columnData);
+  console.log('#####', columnHeader);
+
   const onClose = (values, type) => {
     if (option === "FILTER") {
       setData({

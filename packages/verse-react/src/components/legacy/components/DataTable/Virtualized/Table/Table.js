@@ -1,7 +1,5 @@
 /* eslint-disable */
 
-import type { CellPosition } from "../Grid";
-
 import clsx from "clsx";
 import Column from "./Column";
 import PropTypes from "prop-types";
@@ -285,7 +283,7 @@ export default class Table extends React.PureComponent {
   }
 
   /** CellMeasurer compatibility */
-  invalidateCellSizeAfterRender({ columnIndex, rowIndex }: CellPosition) {
+  invalidateCellSizeAfterRender({ columnIndex, rowIndex }) {
     if (this.Grid) {
       this.Grid.invalidateCellSizeAfterRender({
         rowIndex,
@@ -302,7 +300,7 @@ export default class Table extends React.PureComponent {
   }
 
   /** CellMeasurer compatibility */
-  recomputeGridSize({ columnIndex = 0, rowIndex = 0 }: CellPosition = {}) {
+  recomputeGridSize({ columnIndex = 0, rowIndex = 0 } = {}) {
     if (this.Grid) {
       this.Grid.recomputeGridSize({
         rowIndex,
