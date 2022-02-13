@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { FAIcon } from "../../../Icons";
-import "./CustomizeTable.scss";
+import "@multiverses/verse-css/scss/legacy/CustomizeTable.scss";
 
 export const CustomizeTable = ({
   onClose,

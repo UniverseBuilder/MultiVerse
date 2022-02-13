@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { FAIcon } from "../Icons";
-import "./Loading.scss";
+import "@multiverses/verse-css/scss/legacy/Loading.scss";
 
 export const Loading = ({
   children,

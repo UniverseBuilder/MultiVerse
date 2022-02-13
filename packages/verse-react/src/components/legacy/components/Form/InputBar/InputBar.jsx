@@ -1,7 +1,7 @@
 import React from "react";
 
 import PropTypes from "prop-types";
-import "../../Form/Form.scss";
+import "@multiverses/verse-css/scss/legacy/Form.scss";
 
 export const InputBar = ({ id, type, placeholder, onChange }) => {
   return (

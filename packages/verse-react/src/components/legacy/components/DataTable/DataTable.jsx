@@ -15,8 +15,8 @@ import {
   CustomizeTable,
   PowerFilter,
 } from "./Virtualized/Table";
-import "./Virtualized/Table/styles.scss";
-import "./DataTable.scss";
+import "@multiverses/verse-css/scss/legacy/styles.scss";
+import "@multiverses/verse-css/scss/legacy/DataTable.scss";
 import { FAIcon } from "../Icons/FAIcon";
 
 const noRowsRenderer = () => {

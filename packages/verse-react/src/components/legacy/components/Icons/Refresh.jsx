@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { FAIcon } from "./FAIcon";
-import "./Icons.scss";
+import "@multiverses/verse-css/scss/legacy/Icons.scss";
 
 export const Refresh = ({ onClick, className }) => {
   return (
