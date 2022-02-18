@@ -54,15 +54,14 @@ export const Datagrid = ({
     );
   };
 
+  // eslint-disable-next-line no-unused-vars
   const Header = () => {
     if (!title) {
       return null;
     }
     return (
-      <div>
-        <div className="flex">
-          <div className="m-l-16 header">{title}</div>
-        </div>
+      <div className="">
+        <div className="m-l-16 header">{title}</div>
       </div>
     );
   };
@@ -71,32 +70,34 @@ export const Datagrid = ({
     <div>
       <AutoResizer height={height}>
         {({ width, height }) => (
-          <BaseTable
-            data={colData}
-            disabled={loading}
-            {...tableSchema}
-            emptyRenderer={renderEmpty}
-            estimatedRowHeight={dynamicRowHeight}
-            footerHeight={44}
-            footerRenderer={<Footer />}
-            headerHeight={title ? 44 : 0}
-            headerRenderer={<Header />}
-            height={height}
-            onColumnSort={onColumnSort}
-            overlayRenderer={renderOverlay}
-            sortState={sort}
-            width={width}
-          >
-            <For each="column" index="colIndex" of={columns}>
-              <Column
-                {...column}
-                flexGrow={1}
-                key={column.dataKey}
-                resizable={true}
-                sortable={colIndex === 0}
-              />
-            </For>
-          </BaseTable>
+          <React.Fragment>
+            <div className="flex flex-center header-wrapper fb-700" style={{ width, height: 50 }}>
+              <Header />
+            </div>
+            <BaseTable
+              data={colData}
+              disabled={loading}
+              {...tableSchema}
+              emptyRenderer={renderEmpty}
+              estimatedRowHeight={dynamicRowHeight}
+              footerHeight={44}
+              footerRenderer={<Footer />}
+              height={height}
+              onColumnSort={onColumnSort}
+              overlayRenderer={renderOverlay}
+              sortState={sort}
+              width={width}
+            >
+              <For each="column" index="colIndex" of={columns}>
+                <Column
+                  {...column}
+                  flexGrow={1}
+                  key={column.dataKey}
+                  resizable={true}
+                />
+              </For>
+            </BaseTable>
+          </React.Fragment>
         )}
       </AutoResizer>
     </div>
