@@ -1,33 +1,125 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import PropTypes from 'prop-types';
 
-import { DataTable } from '../legacy/components/DataTable';
+import { Loader } from '../Loader';
+import AutoResizer from './AutoResizer';
+import BaseTable from './BaseTable';
+import Column from './Column';
+import '@multiverses/verse-css/scss/components/BaseTable.scss';
 
-export const Datagrid = ({ schema, data }) => {
+export const Datagrid = ({
+  data,
+  height,
+  schema,
+  dynamicRowHeight,
+  loading,
+  title,
+}) => {
+  const [sort, setSort] = useState({});
+  const [colData, setColData] = useState([]);
+  const { columns, ...tableSchema } = schema;
+  useEffect(() => {
+    setColData(data);
+  }, [data]);
+  const renderOverlay = () => {
+    if (loading) {
+      return <Loader />;
+    }
+
+    return null;
+  };
+
+  const renderEmpty = () => {
+    if (loading) {
+      return null;
+    }
+    return <div className="empty">No data available</div>;
+  };
+
+  // eslint-disable-next-line no-unused-vars
+  const onColumnSort = ({ key, order }) => {
+    setSort({
+      ...sort,
+      [key]: sort[key] === 'desc' ? null : order,
+    });
+    setColData(colData.reverse());
+  };
+
+  const Footer = () => {
+    return (
+      <div className="footer">
+        <div className="m-l-16">Number of rows - {data.length || 0}</div>
+      </div>
+    );
+  };
+
+  const Header = () => {
+    if (!title) {
+      return null;
+    }
+    return (
+      <div>
+        <div className="flex">
+          <div className="m-l-16 header">{title}</div>
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <div className="">
-      <DataTable
-        columnData={data}
-        columnHeader={schema.fields}
-        isCustomizable={false}
-        title="MOCK DATA"
-      />
+    <div>
+      <AutoResizer height={height}>
+        {({ width, height }) => (
+          <BaseTable
+            data={colData}
+            disabled={loading}
+            {...tableSchema}
+            emptyRenderer={renderEmpty}
+            estimatedRowHeight={dynamicRowHeight}
+            footerHeight={44}
+            footerRenderer={<Footer />}
+            headerHeight={title ? 44 : 0}
+            headerRenderer={<Header />}
+            height={height}
+            onColumnSort={onColumnSort}
+            overlayRenderer={renderOverlay}
+            sortState={sort}
+            width={width}
+          >
+            <For each="column" index="colIndex" of={columns}>
+              <Column
+                {...column}
+                flexGrow={1}
+                key={column.dataKey}
+                resizable={true}
+                sortable={colIndex === 0}
+              />
+            </For>
+          </BaseTable>
+        )}
+      </AutoResizer>
     </div>
   );
 };
 
 Datagrid.propTypes = {
-  schema: PropTypes.shape({
-    fields: PropTypes.arrayOf(PropTypes.shape({})),
-  }).isRequired,
   data: PropTypes.array,
-  dataKey: PropTypes.string,
-  labelKey: PropTypes.string,
-  noDataText: PropTypes.string,
+  dynamicRowHeight: PropTypes.number,
+  height: PropTypes.number,
+  loading: PropTypes.bool,
+  schema: PropTypes.shape({
+    columns: PropTypes.array,
+  }),
+  title: PropTypes.string,
 };
 
 Datagrid.defaultProps = {
   data: [],
-  noDataText: 'There are no rows',
+  height: 400,
+  loading: false,
+  schema: {
+    columns: [],
+  },
+  title: '',
 };

@@ -1,22 +1,21 @@
 {
   "title": "Mock Table",
-  "fields": [
+  "columns": [
     {
       "dataKey": "id",
-      "labelName": "S.No",
-      "title": "Serial No",
-      "width": "10%",
+      "title": "S.No",
+      "width": 100,
       "sort": false
     },
     {
       "dataKey": "first_name",
-      "labelName": "First Name",
-      "width": "10%",
+      "title": "First Name",
+      "width": 100,
       "fixed": true
     },
-    { "dataKey": "last_name", "labelName": "Last Name", "width": "10%" },
-    { "dataKey": "email", "labelName": "E-mail", "width": "10%" },
-    { "dataKey": "gender", "labelName": "Gender", "width": "10%" }
+    { "dataKey": "last_name", "title": "Last Name", "width": 100 },
+    { "dataKey": "email", "title": "E-mail", "width": 100 },
+    { "dataKey": "gender", "title": "Gender", "width": 100 }
   ],
   "enhancers": [
     {
