@@ -5,17 +5,33 @@
       "dataKey": "id",
       "title": "S.No",
       "width": 100,
-      "sort": false
+      "dataType": "Number"
     },
     {
       "dataKey": "first_name",
       "title": "First Name",
       "width": 100,
-      "fixed": true
+      "fixed": true,
+      "dataType": "String"
     },
-    { "dataKey": "last_name", "title": "Last Name", "width": 100 },
-    { "dataKey": "email", "title": "E-mail", "width": 100 },
-    { "dataKey": "gender", "title": "Gender", "width": 100 }
+    {
+      "dataKey": "last_name",
+      "title": "Last Name",
+      "width": 100,
+      "dataType": "String"
+    },
+    {
+      "dataKey": "email",
+      "title": "E-mail",
+      "width": 100,
+      "dataType": "String"
+    },
+    {
+      "dataKey": "gender",
+      "title": "Gender",
+      "width": 100,
+      "dataType": "String"
+    }
   ],
   "enhancers": [
     {

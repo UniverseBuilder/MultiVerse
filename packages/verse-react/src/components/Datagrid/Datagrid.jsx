@@ -6,6 +6,7 @@ import { Loader } from '../Loader';
 import AutoResizer from './AutoResizer';
 import BaseTable from './BaseTable';
 import Column from './Column';
+import GridHeader from './GridHeader';
 import '@multiverses/verse-css/scss/components/BaseTable.scss';
 
 export const Datagrid = ({
@@ -54,25 +55,18 @@ export const Datagrid = ({
     );
   };
 
-  // eslint-disable-next-line no-unused-vars
-  const Header = () => {
-    if (!title) {
-      return null;
-    }
-    return (
-      <div className="">
-        <div className="m-l-16 header">{title}</div>
-      </div>
-    );
-  };
-
   return (
     <div>
       <AutoResizer height={height}>
         {({ width, height }) => (
           <React.Fragment>
-            <div className="flex flex-center header-wrapper fb-700" style={{ width, height: 50 }}>
-              <Header />
+            <div className="header-wrapper" style={{ width }}>
+              <GridHeader
+                columns={columns}
+                data={data}
+                setColData={setColData}
+                title={title}
+              />
             </div>
             <BaseTable
               data={colData}

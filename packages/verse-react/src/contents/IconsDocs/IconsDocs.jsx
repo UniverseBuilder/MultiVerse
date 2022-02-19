@@ -3,7 +3,12 @@ import React from 'react';
 import { Icon } from 'components/Icon';
 import { Wrapper } from 'components/Wrapper';
 
-const icons = [{ name: 'plus' }, { name: 'minus' }];
+const icons = [
+  { name: 'plus' },
+  { name: 'minus' },
+  { name: 'filter' },
+  { name: 'close' },
+];
 
 const fillIcons = [
   { name: 'plus', type: 'fill' },
@@ -15,7 +20,7 @@ export const IconsDocs = () => {
     <Wrapper>
       <Wrapper className="flex">
         <For each="icon" index="idx" of={icons}>
-          <Wrapper className="iconWrapper">
+          <Wrapper className="iconWrapper" key={idx}>
             <Icon
               {...icon}
               className="primary-icon flex-100"

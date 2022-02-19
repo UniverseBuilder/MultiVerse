@@ -56,6 +56,10 @@
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .gutter {
   & > label {
     margin-top: 4px;
@@ -111,4 +115,8 @@
 
 .bottom {
   bottom: 0px;
+}
+
+.space-btw {
+  @include flex-justify(space-between);
 }

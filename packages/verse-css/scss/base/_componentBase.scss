@@ -86,9 +86,11 @@
   width: 100%;
   font-family: inherit;
   font-weight: inherit;
+  height: 42px;
 }
 .form-select {
   @extend .form-input;
+  height: 42px;
 }
 .form-textarea {
   @extend .form-input;
@@ -272,4 +274,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.filterbar {
+  height: 40px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  word-break: break-all;
 }

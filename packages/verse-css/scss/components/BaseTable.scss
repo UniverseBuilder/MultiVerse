@@ -340,7 +340,7 @@ $table-prefix: BaseTable !default;
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  justify-content: flex-start;
+  height: 50px;
   font-size: 1rem;
 }

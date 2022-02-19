@@ -4,12 +4,12 @@ body {
   color: $onBackground;
   background-color: $background;
   font: $global-text-font-size $global-font-family;
+}
 
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 .side-nav,

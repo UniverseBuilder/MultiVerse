@@ -13,6 +13,13 @@
   flex-wrap: wrap;
 }
 
+.flex-center-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
 @mixin flex-items($flex: 1, $align: unset, $justify: unset, $minwidth: 0) {
   @include flex;
   align-items: $align;

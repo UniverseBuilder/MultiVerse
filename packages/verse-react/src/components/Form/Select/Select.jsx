@@ -21,13 +21,21 @@ export const Select = ({
   const { set } = useForm();
 
   const handleChange = e => {
-    set({ model, value: e.target.value });
+    if (labelKey) {
+      set({
+        model,
+        value: options[e.target.selectedIndex - 1],
+        overWrite: true,
+      });
+    } else {
+      set({ model, value: e.target.value });
+    }
     onChange(e.target.value);
   };
 
   useEffect(() => {
     if (defaultValue) {
-      set({ model, value: defaultValue });
+      set({ model, value: defaultValue, overWrite: true, });
     }
   }, [defaultValue]);
 
@@ -38,7 +46,7 @@ export const Select = ({
       id={id}
       onChange={handleChange}
       placeholder={placeholder}
-      value={value}
+      value={valueKey ? value[valueKey] : value}
     >
       <option key="" value="">
         {placeholder}
@@ -65,7 +73,7 @@ export const Select = ({
 
 Select.propTypes = {
   className: PropTypes.string,
-  defaultValue: PropTypes.string,
+  defaultValue: PropTypes.any,
   disabled: PropTypes.bool,
   id: PropTypes.string,
   labelKey: PropTypes.string,
