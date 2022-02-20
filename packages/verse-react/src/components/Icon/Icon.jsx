@@ -8,7 +8,7 @@ export const Icon = ({ name, type, onClick, className, width, height }) => {
     if (name) {
       import(
         /* webpackChunkName: "custom-scss-chunk" */
-        /* webpackMode: "eager" */
+        /* webpackMode: "lazy" */
         /* webpackPrefetch: true */
         /* webpackPreload: true */
         `@multiverses/verse-icon/icons/svg/${type}/${name}.svg`
