@@ -22,7 +22,7 @@ const GridHeader = ({
 
   const handleAddFilter = newFilters => {
     if (loadData) {
-      loadData(colData, newFilters);
+      loadData(newFilters);
     } else {
       setColData(powerFilter(colData, newFilters));
     }
