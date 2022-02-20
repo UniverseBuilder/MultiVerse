@@ -17,6 +17,29 @@ const overWriteMerge = (target, source) => {
   return destination;
 };
 
+function mergeAssign(target, source) {
+  const formData = { ...target };
+  const isObject = obj => obj && typeof obj === 'object';
+
+  if (!isObject(formData) || !isObject(source)) {
+    return source;
+  }
+
+  Object.keys(source).forEach(key => {
+    const targetValue = formData[key];
+    const sourceValue = source[key];
+
+    if (Array.isArray(targetValue) && Array.isArray(sourceValue)) {
+      formData[key] = targetValue.concat(sourceValue);
+    } else if (isObject(targetValue) && isObject(sourceValue)) {
+      formData[key] = { ...targetValue, ...sourceValue };
+    } else {
+      formData[key] = sourceValue;
+    }
+  });
+
+  return formData;
+}
 export const formSlice = createSlice({
   name: 'form',
   initialState: {
@@ -36,6 +59,17 @@ export const formSlice = createSlice({
         return { form: merge(state.form, obj, { arrayMerge: overWriteMerge }) };
       }
       return { form: merge(state.form, obj) };
+    },
+    assignForm: (state, { payload: { model, value } }) => {
+      var i,
+        obj = {},
+        strArr = model.split('.');
+      var x = obj;
+      for (i = 0; i < strArr.length - 1; i++) {
+        x = x[strArr[i]] = {};
+      }
+      x[strArr[i]] = value;
+      return { form: mergeAssign(state.form, obj) };
     },
     resetForm: (state, { payload: model }) => {
       var i,
@@ -58,12 +92,13 @@ export const formSlice = createSlice({
   extraReducers: {},
 });
 
-export const { setForm, resetForm } = formSlice.actions;
+export const { setForm, assignForm, resetForm } = formSlice.actions;
 
 export const useForm = () => {
   const dispatch = useDispatch();
   return {
     set: data => dispatch(setForm(data)),
+    assign: data => dispatch(assignForm(data)),
     reset: model => dispatch(resetForm(model)),
   };
 };

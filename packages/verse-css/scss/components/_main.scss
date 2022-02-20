@@ -190,7 +190,7 @@ body {
   display: inline-block;
   border-radius: 4px;
   background-color: honeydew;
-  font-size: 11px;
+  font-size: 0.9rem;
   font-weight: 600;
   padding: 3px 7px;
   border: 1px solid #f0f0f0;
@@ -199,11 +199,7 @@ body {
   &:focus,
   &:focus-visible,
   &:visited {
-    color: honeydew;
-    background-color: crimson;
-  }
-  .close-icon {
-    font-size: 14px;
-    margin-left: 5px;
+    color: $onPrimary;
+    background-color: $primary;
   }
 }

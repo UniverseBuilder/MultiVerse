@@ -5,8 +5,16 @@ import PropTypes from 'prop-types';
 
 import { Image } from '../Image';
 
-const IconClose = ({ className, onClick }) => {
-  return <Image className={className} onClick={onClick} src={close} />;
+const IconClose = ({ className, onClick, size }) => {
+  return (
+    <Image
+      className={className}
+      height={size}
+      onClick={onClick}
+      src={close}
+      width={size}
+    />
+  );
 };
 
 export default IconClose;
@@ -14,9 +22,11 @@ export default IconClose;
 IconClose.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
+  size: PropTypes.number,
 };
 
 IconClose.defaultProps = {
   className: 'primary-icon',
   onClick: () => null,
+  size: 24,
 };

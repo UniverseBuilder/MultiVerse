@@ -50,7 +50,10 @@ export const Datagrid = ({
   const Footer = () => {
     return (
       <div className="footer">
-        <div className="m-l-16">Number of rows - {data.length || 0}</div>
+        <div className="m-l-16 f-1 fb-400">
+          Showing <span className="fb-500">{colData.length}</span> of{' '}
+          {data.length || 0} results
+        </div>
       </div>
     );
   };

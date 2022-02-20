@@ -17,16 +17,10 @@ const stringOptions = [
   'ends With',
   'includes',
   'not equals',
-]
-const numOptions = 
-  [
-    'equals',
-    'greater than',
-    'lesser than',
-    'not equals',
-  ];
+];
+const numOptions = ['equals', 'greater than', 'lesser than', 'not equals'];
 
-const PowerFilter = ({ options, resetData, ...props }) => {
+const PowerFilter = ({ options, addFilter, resetData, ...props }) => {
   const { set } = useForm();
   const { isFilterEnabled, filterParams = {}, filter = {} } = useModel('grid');
   const { column, input, operator } = filter;
@@ -41,6 +35,7 @@ const PowerFilter = ({ options, resetData, ...props }) => {
       [column.dataKey]: { column, operator, input },
     };
     set({ model: 'grid.filterParams', value: newObj });
+    addFilter(newObj);
   };
 
   const handleClose = () => {
@@ -48,7 +43,8 @@ const PowerFilter = ({ options, resetData, ...props }) => {
     resetData();
   };
 
-  const operatorOptions = column?.dataType === 'Number'? numOptions : stringOptions;
+  const operatorOptions =
+    column?.dataType === 'Number' ? numOptions : stringOptions;
 
   return (
     <React.Fragment>
@@ -97,10 +93,12 @@ const PowerFilter = ({ options, resetData, ...props }) => {
 
 PowerFilter.propTypes = {
   resetData: PropTypes.func.isRequired,
+  addFilter: PropTypes.func,
   options: PropTypes.array,
 };
 
 PowerFilter.defaultProps = {
+  addFilter: () => null,
   options: [],
 };
 

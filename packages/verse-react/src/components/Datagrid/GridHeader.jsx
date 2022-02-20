@@ -1,43 +1,30 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import { powerFilter } from '../../utility/functions/powerFilter';
 import { useModel } from '../../utility/hooks/useModel';
+import { useForm } from '../../utility/redux/slices/forms/formSlice';
+import { Badge } from '../Badge';
 import PowerFilter from './PowerFilter';
 
-const filterFunctions = {
-  equals: (a, b) => a === b,
-  'greater than': (a, b) => a > b,
-  'lesser than': (a, b) => a < b,
-  'starts With': (a, b) => a.startsWith(b),
-  'ends With': (a, b) => a.endsWith(b),
-  includes: (a, b) => a.includes(b),
-  'not equals': (a, b) => a !== b,
-};
-
 const GridHeader = ({ title, columns, data, colData, setColData }) => {
-  const { isFilterEnabled, filterParams = {} } = useModel('grid');
+  const { filterParams = {} } = useModel('grid');
   const filters = Object.keys(filterParams);
+  const { assign } = useForm();
 
-  useEffect(() => {
-    if (isFilterEnabled && filters.length) {
-      const newData = colData.filter(item =>
-        filters.reduce((acc, q) => {
-          if (filterParams[q].column?.dataType === 'Number') {
-            return filterFunctions[filterParams[q].operator](
-              item[q],
-              Number(filterParams[q].input)
-            );
-          }
-          return filterFunctions[filterParams[q].operator](
-            item[q].toLowerCase(),
-            filterParams[q].input.toLowerCase()
-          );
-        }, [])
-      );
-      setColData(newData);
-    }
-  }, [isFilterEnabled, JSON.stringify(filterParams)]);
+  const handleAddFilter = newFilters => {
+    setColData(powerFilter(colData, newFilters));
+  };
+
+  const handleDeleteFilter = filter => {
+    const newFilters = {
+      ...filterParams,
+    };
+    delete newFilters[filter];
+    assign({ model: 'grid.filterParams', value: newFilters });
+    setColData(powerFilter(data, newFilters));
+  };
 
   const resetData = () => {
     setColData(data);
@@ -53,6 +40,7 @@ const GridHeader = ({ title, columns, data, colData, setColData }) => {
         </div>
         <div className="flex-50">
           <PowerFilter
+            addFilter={handleAddFilter}
             labelKey="title"
             options={columns}
             resetData={resetData}
@@ -60,16 +48,22 @@ const GridHeader = ({ title, columns, data, colData, setColData }) => {
           />
         </div>
       </div>
-      <If condition={filters.length && isFilterEnabled}>
+      <If condition={filters.length}>
         <div className="flex">
           <div className="m-l-12 filterbar">
             <For each="filter" index="idx" of={filters}>
-              <span key={idx}>
-                {filterParams[filter].column.title}&nbsp;
-                {filterParams[filter].operator}&nbsp;
-                <b>{filterParams[filter].input}</b>
-              </span>
-              &nbsp;,&nbsp;
+              <Badge
+                badgeLabel={filter}
+                key={idx}
+                onClose={handleDeleteFilter}
+                title="Click to clear"
+              >
+                <span>
+                  {filterParams[filter].column.title}&nbsp;
+                  {filterParams[filter].operator}&nbsp;
+                  <b>{filterParams[filter].input}</b>
+                </span>
+              </Badge>
             </For>
           </div>
         </div>
