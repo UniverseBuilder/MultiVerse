@@ -16,6 +16,7 @@ export const Datagrid = ({
   dynamicRowHeight,
   loading,
   title,
+  loadData,
 }) => {
   const [sort, setSort] = useState({});
   const [colData, setColData] = useState([]);
@@ -68,6 +69,7 @@ export const Datagrid = ({
                 colData={colData}
                 columns={columns}
                 data={data}
+                loadData={loadData}
                 setColData={setColData}
                 title={title}
               />
@@ -106,6 +108,7 @@ Datagrid.propTypes = {
   data: PropTypes.array,
   dynamicRowHeight: PropTypes.number,
   height: PropTypes.number,
+  loadData: PropTypes.func,
   loading: PropTypes.bool,
   schema: PropTypes.shape({
     columns: PropTypes.array,
@@ -116,6 +119,7 @@ Datagrid.propTypes = {
 Datagrid.defaultProps = {
   data: [],
   height: 400,
+  loadData: null,
   loading: false,
   schema: {
     columns: [],

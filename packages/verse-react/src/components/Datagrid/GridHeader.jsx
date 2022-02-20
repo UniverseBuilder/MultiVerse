@@ -8,13 +8,24 @@ import { useForm } from '../../utility/redux/slices/forms/formSlice';
 import { Badge } from '../Badge';
 import PowerFilter from './PowerFilter';
 
-const GridHeader = ({ title, columns, data, colData, setColData }) => {
+const GridHeader = ({
+  title,
+  columns,
+  data,
+  colData,
+  setColData,
+  loadData,
+}) => {
   const { filterParams = {} } = useModel('grid');
   const filters = Object.keys(filterParams);
   const { assign } = useForm();
 
   const handleAddFilter = newFilters => {
-    setColData(powerFilter(colData, newFilters));
+    if (loadData) {
+      loadData(colData, newFilters);
+    } else {
+      setColData(powerFilter(colData, newFilters));
+    }
   };
 
   const handleDeleteFilter = filter => {
@@ -23,7 +34,11 @@ const GridHeader = ({ title, columns, data, colData, setColData }) => {
     };
     delete newFilters[filter];
     assign({ model: 'grid.filterParams', value: newFilters });
-    setColData(powerFilter(data, newFilters));
+    if (loadData) {
+      loadData(newFilters);
+    } else {
+      setColData(powerFilter(data, newFilters));
+    }
   };
 
   const resetData = () => {
@@ -77,6 +92,7 @@ GridHeader.propTypes = {
   colData: PropTypes.array,
   columns: PropTypes.array,
   data: PropTypes.array,
+  loadData: PropTypes.func,
   title: PropTypes.string,
 };
 
@@ -84,6 +100,7 @@ GridHeader.defaultProps = {
   colData: [],
   columns: [],
   data: [],
+  loadData: null,
   title: '',
 };
 
