@@ -62,6 +62,7 @@ export const Datagrid = ({
           <React.Fragment>
             <div className="header-wrapper" style={{ width }}>
               <GridHeader
+                colData={colData}
                 columns={columns}
                 data={data}
                 setColData={setColData}

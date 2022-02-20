@@ -5,7 +5,26 @@ import PropTypes from 'prop-types';
 import { useModel } from '../../utility/hooks/useModel';
 import { useForm } from '../../utility/redux/slices/forms/formSlice';
 import { Form } from '../Form';
-import { Icon } from '../Icon';
+import IconClose from '../Icon/IconClose';
+import IconFilter from '../Icon/IconFilter';
+import IconPlus from '../Icon/IconPlus';
+
+const stringOptions = [
+  'equals',
+  'greater than',
+  'lesser than',
+  'starts With',
+  'ends With',
+  'includes',
+  'not equals',
+]
+const numOptions = 
+  [
+    'equals',
+    'greater than',
+    'lesser than',
+    'not equals',
+  ];
 
 const PowerFilter = ({ options, resetData, ...props }) => {
   const { set } = useForm();
@@ -25,8 +44,11 @@ const PowerFilter = ({ options, resetData, ...props }) => {
   };
 
   const handleClose = () => {
+    handleClick();
     resetData();
   };
+
+  const operatorOptions = column?.dataType === 'Number'? numOptions : stringOptions;
 
   return (
     <React.Fragment>
@@ -43,17 +65,9 @@ const PowerFilter = ({ options, resetData, ...props }) => {
             </div>
             <div className="flex-25">
               <Form.Select
-                defaultValue="includes"
+                defaultValue={operatorOptions[0]}
                 model="grid.filter.operator"
-                options={[
-                  'equals',
-                  'greater than',
-                  'lesser than',
-                  'starts With',
-                  'ends With',
-                  'includes',
-                  'not equals',
-                ]}
+                options={operatorOptions}
               />
             </div>
             <div className="flex-30">
@@ -61,30 +75,18 @@ const PowerFilter = ({ options, resetData, ...props }) => {
             </div>
             <div className="flex-5">
               <div className="text-right m-t-8">
-                <Icon
-                  className="primary-icon flex-100"
-                  name="plus"
-                  onClick={handleAdd}
-                />
+                <IconPlus onClick={handleAdd} />
               </div>
             </div>
             <div className="flex-5">
               <div className="text-right m-t-4">
-                <Icon
-                  className="primary-icon flex-100"
-                  name="close"
-                  onClick={handleClose}
-                />
+                <IconClose onClick={handleClose} />
               </div>
             </div>
           </When>
           <Otherwise>
             <div className="text-right m-t-12">
-              <Icon
-                className="primary-icon flex-100"
-                name="filter"
-                onClick={handleClick}
-              />
+              <IconFilter onClick={handleClick} />
             </div>
           </Otherwise>
         </Choose>

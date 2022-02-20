@@ -15,13 +15,13 @@ const filterFunctions = {
   'not equals': (a, b) => a !== b,
 };
 
-const GridHeader = ({ title, columns, data, setColData }) => {
+const GridHeader = ({ title, columns, data, colData, setColData }) => {
   const { isFilterEnabled, filterParams = {} } = useModel('grid');
   const filters = Object.keys(filterParams);
 
   useEffect(() => {
     if (isFilterEnabled && filters.length) {
-      const newData = data.filter(item =>
+      const newData = colData.filter(item =>
         filters.reduce((acc, q) => {
           if (filterParams[q].column?.dataType === 'Number') {
             return filterFunctions[filterParams[q].operator](
@@ -80,12 +80,14 @@ const GridHeader = ({ title, columns, data, setColData }) => {
 
 GridHeader.propTypes = {
   setColData: PropTypes.func.isRequired,
+  colData: PropTypes.array,
   columns: PropTypes.array,
   data: PropTypes.array,
   title: PropTypes.string,
 };
 
 GridHeader.defaultProps = {
+  colData: [],
   columns: [],
   data: [],
   title: '',

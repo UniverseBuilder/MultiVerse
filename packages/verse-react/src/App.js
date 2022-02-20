@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     return import(
       /* webpackChunkName: "custom-scss-chunk" */
-      /* webpackMode: "lazy" */
+      /* webpackMode: "eager" */
       /* webpackPrefetch: true */
       /* webpackPreload: true */
       `@multiverses/verse-css/scss/themes${themes[theme]}.scss`
