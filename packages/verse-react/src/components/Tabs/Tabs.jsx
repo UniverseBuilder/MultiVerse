@@ -24,7 +24,7 @@ export const Tabs = ({ tabs, activeTab, tabName, model, onTabDelete }) => {
               }`}
               onClick={() => handleTabSelect(idx + 1)}
             >
-              <div className="flex-80">{tab || tab[tabName]}</div>
+              <div className="flex-80">{tab[tabName] || tab}</div>
               <div className="flex-20 text-right">
                 <IconClose onCLick={() => handleTabDelete(idx + 1)} />
               </div>
