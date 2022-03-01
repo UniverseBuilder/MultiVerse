@@ -16,7 +16,7 @@ export const ProfileContent = ({ position, children, showContent }) => {
 ProfileContent.propTypes = {
   children: PropTypes.node,
   position: PropTypes.string,
-  showContent: PropTypes.bool,
+  showContent: PropTypes.any,
 };
 
 ProfileContent.defaultProps = {

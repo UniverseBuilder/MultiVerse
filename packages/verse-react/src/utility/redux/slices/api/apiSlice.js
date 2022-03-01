@@ -69,8 +69,8 @@ export const useApi = model => {
   return data => dispatch(apiCall({ ...data, model }));
 };
 
-export const useApiState = model => {
-  return useSelector(state => state.api?.[model] || {});
+export const useApiState = (model, defaultValue = {}) => {
+  return useSelector(state => state.api?.[model] || defaultValue);
 };
 
 export default apiSlice.reducer;

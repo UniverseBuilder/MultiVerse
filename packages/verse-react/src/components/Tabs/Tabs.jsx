@@ -16,7 +16,7 @@ export const Tabs = ({ tabs, activeTab, tabName, model, onTabDelete }) => {
   return (
     <div className="tabs flex">
       <For each="tab" index="idx" of={tabs}>
-        <div className="flex-100">
+        <div className="flex-100" key={idx}>
           <div className="tabs-title">
             <div
               className={`flex flex-center p-x-8 ${
