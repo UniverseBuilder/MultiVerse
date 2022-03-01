@@ -2,7 +2,8 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { Icon } from '../../Icon';
+import IconMinus from '../../Icon/IconMinus';
+import IconPlus from '../../Icon/IconPlus';
 
 export const AccordionHeader = ({
   children,
@@ -18,10 +19,14 @@ export const AccordionHeader = ({
     >
       <h3 className="header">{children}</h3>
       <div className="icon">
-        <Icon
-          className=" primary-icon flex-100"
-          name={isActive ? 'minus' : 'plus'}
-        />
+        <Choose>
+          <When condition={isActive}>
+            <IconMinus className=" primary-icon flex-100" />
+          </When>
+          <Otherwise>
+            <IconPlus className=" primary-icon flex-100" />
+          </Otherwise>
+        </Choose>
       </div>
     </header>
   );
