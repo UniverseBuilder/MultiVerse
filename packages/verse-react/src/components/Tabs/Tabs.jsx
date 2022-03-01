@@ -2,20 +2,35 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import Title from './Title';
+import { useForm } from '../../utility/redux/slices/forms/formSlice';
+import IconClose from '../Icon/IconClose';
 
-export const Tabs = ({ tabs, activeTab, model, onTabDelete }) => {
+export const Tabs = ({ tabs, activeTab, tabName, model, onTabDelete }) => {
+  const { set } = useForm();
+  const handleTabSelect = tabIndex => {
+    set({ model, value: tabIndex });
+  };
+  const handleTabDelete = tabIndex => {
+    onTabDelete(tabIndex);
+  };
   return (
     <div className="tabs flex">
       <For each="tab" index="idx" of={tabs}>
-        <Title
-          activeTab={activeTab}
-          key={idx}
-          model={model}
-          onTabDelete={onTabDelete}
-          tab={tab}
-          tabIndex={idx + 1}
-        />
+        <div className="flex-100">
+          <div className="tabs-title">
+            <div
+              className={`flex flex-center p-x-8 ${
+                activeTab === idx + 1 ? 'primary' : 'primary-outline'
+              }`}
+              onClick={() => handleTabSelect(idx + 1)}
+            >
+              <div className="flex-80">{tab || tab[tabName]}</div>
+              <div className="flex-20 text-right">
+                <IconClose onCLick={() => handleTabDelete(idx + 1)} />
+              </div>
+            </div>
+          </div>
+        </div>
       </For>
     </div>
   );
@@ -26,6 +41,7 @@ Tabs.propTypes = {
   activeTab: PropTypes.number,
   children: PropTypes.node,
   onTabDelete: PropTypes.func,
+  tabName: PropTypes.string,
   tabs: PropTypes.array,
 };
 
