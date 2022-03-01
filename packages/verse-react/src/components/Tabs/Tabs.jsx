@@ -1,36 +1,38 @@
-import React from "react";
+import React from 'react';
 
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-export const Tabs = ({ tabs, activateTab, activeTab }) => {
-  const onClick = (idx) => {
-    activateTab(idx);
-  };
+import Title from './Title';
+
+export const Tabs = ({ tabs, activeTab, model, onTabDelete }) => {
   return (
-    <ul className="nav nav-tabs">
+    <div className="tabs flex">
       <For each="tab" index="idx" of={tabs}>
-        <li className="nav-item">
-          <a
-            className={`nav-link ${activeTab === idx ? "active" : "disabled"}`}
-            href="#"
-            onClick={() => onClick(idx)}
-          >
-            {tab}
-          </a>
-        </li>
+        <Title
+          activeTab={activeTab}
+          key={idx}
+          model={model}
+          onTabDelete={onTabDelete}
+          tab={tab}
+          tabIndex={idx + 1}
+        />
       </For>
-    </ul>
+    </div>
   );
 };
 
 Tabs.propTypes = {
-  activateTab: PropTypes.func,
+  model: PropTypes.string.isRequired,
   activeTab: PropTypes.number,
-  tabs: PropTypes.arrayOf(PropTypes.shape({})),
+  children: PropTypes.node,
+  onTabDelete: PropTypes.func,
+  tabs: PropTypes.array,
 };
 
 Tabs.defaultProps = {
-  activateTab: () => 0,
-  activeTab: 0,
-  tabs: [],
+  activeTab: 1,
+  children: null,
+  onTabDelete: () => null,
 };
+
+export default Tabs;

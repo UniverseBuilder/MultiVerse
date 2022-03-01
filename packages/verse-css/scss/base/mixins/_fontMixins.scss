@@ -16,6 +16,7 @@
     background-color: $bg-color;
     color: $color;
     text-decoration: $textDecor;
+    border: 1px solid $bg-color;
     &:hover,
     &:active,
     &:focus {
