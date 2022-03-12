@@ -19,7 +19,8 @@ export const Datepicker = ({
   const { set } = useForm();
 
   const handleChange = e => {
-    set({ model, value: e.target.value });
+    console.log(e.target.value);
+    set({ model, value: `${e.target.value}` });
     onChange();
   };
 
