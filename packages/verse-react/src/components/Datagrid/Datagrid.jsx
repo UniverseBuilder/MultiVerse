@@ -10,6 +10,7 @@ import GridHeader from './GridHeader';
 import '@multiverses/verse-css/scss/components/BaseTable.scss';
 
 export const Datagrid = ({
+  tableId,
   data,
   height,
   schema,
@@ -64,16 +65,19 @@ export const Datagrid = ({
       <AutoResizer height={height}>
         {({ width, height }) => (
           <React.Fragment>
-            <div className="header-wrapper" style={{ width }}>
-              <GridHeader
-                colData={colData}
-                columns={columns}
-                data={data}
-                loadData={loadData}
-                setColData={setColData}
-                title={title}
-              />
-            </div>
+            <If condition={title}>
+              <div className="header-wrapper" style={{ width }}>
+                <GridHeader
+                  colData={colData}
+                  columns={columns}
+                  data={data}
+                  loadData={loadData}
+                  setColData={setColData}
+                  tableId={tableId}
+                  title={title}
+                />
+              </div>
+            </If>
             <BaseTable
               data={colData}
               disabled={loading}
@@ -113,6 +117,7 @@ Datagrid.propTypes = {
   schema: PropTypes.shape({
     columns: PropTypes.array,
   }),
+  tableId: PropTypes.string,
   title: PropTypes.string,
 };
 
@@ -124,5 +129,6 @@ Datagrid.defaultProps = {
   schema: {
     columns: [],
   },
+  tableId: 'grid',
   title: '',
 };

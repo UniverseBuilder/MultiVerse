@@ -20,13 +20,13 @@ const stringOptions = [
 ];
 const numOptions = ['equals', 'greater than', 'lesser than', 'not equals'];
 
-const PowerFilter = ({ options, addFilter, resetData, ...props }) => {
+const PowerFilter = ({ tableId, options, addFilter, resetData, ...props }) => {
   const { set } = useForm();
   const { isFilterEnabled, filterParams = {}, filter = {} } = useModel('grid');
   const { column, input, operator } = filter;
 
   const handleClick = () => {
-    set({ model: 'grid.isFilterEnabled', value: !isFilterEnabled });
+    set({ model: `${tableId}.isFilterEnabled`, value: !isFilterEnabled });
   };
 
   const handleAdd = () => {
@@ -34,7 +34,7 @@ const PowerFilter = ({ options, addFilter, resetData, ...props }) => {
       ...filterParams,
       [column.dataKey]: { column, operator, input },
     };
-    set({ model: 'grid.filterParams', value: newObj });
+    set({ model: `${tableId}.filterParams`, value: newObj });
     addFilter(newObj);
   };
 
@@ -54,7 +54,7 @@ const PowerFilter = ({ options, addFilter, resetData, ...props }) => {
             <div className="flex-35">
               <Form.Select
                 defaultValue={options[0]}
-                model="grid.filter.column"
+                model={`${tableId}.filter.column`}
                 options={options}
                 {...props}
               />
@@ -62,12 +62,12 @@ const PowerFilter = ({ options, addFilter, resetData, ...props }) => {
             <div className="flex-25">
               <Form.Select
                 defaultValue={operatorOptions[0]}
-                model="grid.filter.operator"
+                model={`${tableId}.filter.operator`}
                 options={operatorOptions}
               />
             </div>
             <div className="flex-30">
-              <Form.Input model="grid.filter.input" />
+              <Form.Input model={`${tableId}.filter.input`} />
             </div>
             <div className="flex-5">
               <div className="text-right m-t-8">
@@ -95,11 +95,13 @@ PowerFilter.propTypes = {
   resetData: PropTypes.func.isRequired,
   addFilter: PropTypes.func,
   options: PropTypes.array,
+  tableId: PropTypes.string,
 };
 
 PowerFilter.defaultProps = {
   addFilter: () => null,
   options: [],
+  tableId: 'grid',
 };
 
 export default PowerFilter;

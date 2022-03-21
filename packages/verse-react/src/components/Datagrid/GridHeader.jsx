@@ -9,6 +9,7 @@ import { Badge } from '../Badge';
 import PowerFilter from './PowerFilter';
 
 const GridHeader = ({
+  tableId,
   title,
   columns,
   data,
@@ -33,7 +34,7 @@ const GridHeader = ({
       ...filterParams,
     };
     delete newFilters[filter];
-    assign({ model: 'grid.filterParams', value: newFilters });
+    assign({ model: `${tableId}.filterParams`, value: newFilters });
     if (loadData) {
       loadData(newFilters);
     } else {
@@ -59,6 +60,7 @@ const GridHeader = ({
             labelKey="title"
             options={columns}
             resetData={resetData}
+            tableId={tableId}
             valueKey="dataKey"
           />
         </div>
@@ -93,6 +95,7 @@ GridHeader.propTypes = {
   columns: PropTypes.array,
   data: PropTypes.array,
   loadData: PropTypes.func,
+  tableId: PropTypes.string,
   title: PropTypes.string,
 };
 
@@ -101,6 +104,7 @@ GridHeader.defaultProps = {
   columns: [],
   data: [],
   loadData: null,
+  tableId: 'grid',
   title: '',
 };
 
