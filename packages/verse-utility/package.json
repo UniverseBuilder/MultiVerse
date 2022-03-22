@@ -1,13 +1,16 @@
 {
-    "name": "@multiverses/verse-utility",
-    "version": "0.0.0",
-    "main": "index.js",
-    "author": "UniverseBuilder",
-    "publishConfig": {
-      "access": "public"
-    },
-    "scripts": {
-      "clean": "rimraf dist"
-    }
+  "name": "@multiverses/verse-utility",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "UniverseBuilder",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "dexie": "^3.2.1",
+    "idb": "^7.0.1"
   }
-  
+}
