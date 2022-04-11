@@ -84,17 +84,17 @@ export const addItems = (dbName, dbVersion, objectStore, data) => {
     request.onerror = event => {
       // Handle errors.
     };
-    request.onupgradeneeded = event => {
+    request.onsuccess = event => {
       const db = event.target.result;
       const store = db
         .transaction([objectStore], 'readwrite')
         .objectStore(objectStore);
       data.forEach(item => {
         const request = store.add(item);
-        request.onsuccess = event => {
-          return 'Items added successfully';
-        };
       });
+    };
+    request.onerror = event => {
+      console.log(error);
     };
   } catch (err) {
     return err;
@@ -146,6 +146,19 @@ export const getAll = (dbName, dbVersion, objectStore, cb) => {
     db.transaction(objectStore).objectStore(objectStore).getAll().onsuccess =
       event => {
         cb(event.target.result);
+      };
+  };
+};
+
+export const getData = (dbName, dbVersion, objectStore, keyName, cb) => {
+  const request = indexedDB.open(dbName, dbVersion);
+  console.log(keyName);
+  request.onsuccess = event => {
+    const db = event.target.result;
+    db.transaction(objectStore).objectStore(objectStore).getAll().onsuccess =
+      event => {
+        const colData = event.target.result.map(it => it[keyName]).sort();
+        cb(colData);
       };
   };
 };
