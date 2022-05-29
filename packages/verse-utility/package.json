@@ -12,6 +12,7 @@
   "dependencies": {
     "dexie": "^3.2.1",
     "idb": "^7.0.1",
+    "mathjs": "^10.6.0",
     "nerdamer": "^1.1.13"
   }
 }
