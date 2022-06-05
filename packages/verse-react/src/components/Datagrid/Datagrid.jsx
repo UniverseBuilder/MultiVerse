@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 
+import orderBy from 'lodash/orderBy';
 import PropTypes from 'prop-types';
 
 import { Loader } from '../Loader';
@@ -7,6 +9,7 @@ import AutoResizer from './AutoResizer';
 import BaseTable from './BaseTable';
 import Column from './Column';
 import GridHeader from './GridHeader';
+
 import '@multiverses/verse-css/scss/components/BaseTable.scss';
 
 export const Datagrid = ({
@@ -18,8 +21,9 @@ export const Datagrid = ({
   loading,
   title,
   loadData,
+  sortBy,
 }) => {
-  const [sort, setSort] = useState({});
+  const [sort, setSort] = useState(sortBy);
   const [colData, setColData] = useState([]);
   const { columns, ...tableSchema } = schema;
   useEffect(() => {
@@ -40,13 +44,13 @@ export const Datagrid = ({
     return <div className="empty">No data available</div>;
   };
 
-  // eslint-disable-next-line no-unused-vars
   const onColumnSort = ({ key, order }) => {
-    setSort({
-      ...sort,
-      [key]: sort[key] === 'desc' ? null : order,
-    });
-    setColData(colData.reverse());
+    console.log(key, order);
+    const newSort = {
+      [key]: order,
+    };
+    setSort(newSort);
+    setColData(orderBy(colData, [key], [order]));
   };
 
   const Footer = () => {
@@ -117,6 +121,7 @@ Datagrid.propTypes = {
   schema: PropTypes.shape({
     columns: PropTypes.array,
   }),
+  sortBy: PropTypes.shape({}),
   tableId: PropTypes.string,
   title: PropTypes.string,
 };
@@ -129,6 +134,7 @@ Datagrid.defaultProps = {
   schema: {
     columns: [],
   },
+  sortBy: null,
   tableId: 'grid',
   title: '',
 };
