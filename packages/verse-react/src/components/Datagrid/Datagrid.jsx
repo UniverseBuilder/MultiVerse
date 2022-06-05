@@ -45,7 +45,6 @@ export const Datagrid = ({
   };
 
   const onColumnSort = ({ key, order }) => {
-    console.log(key, order);
     const newSort = {
       [key]: order,
     };
