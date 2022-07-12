@@ -3,13 +3,20 @@ import axios from 'axios';
 import { sessionStorage } from '../storage';
 
 export const httpVerse = async params => {
-  const { url, method = 'POST', headers = {}, onSuccess } = params;
+  const {
+    url,
+    method = 'POST',
+    headers = {},
+    onSuccess,
+    withCredentials = true,
+  } = params;
   const reqHeaders = {
     ...headers,
   };
   const urlParams = {
     method,
     headers: reqHeaders,
+    withCredentials,
   };
   if (params.data) {
     urlParams.headers['Content-Type'] = 'application/json';
@@ -39,7 +46,7 @@ export const httpVerse = async params => {
 };
 
 const fetchData = async (url, urlParams) => {
-  const result = await axios({ url, ...urlParams, withCredentials: true })
+  const result = await axios({ url, ...urlParams })
     .then(res => {
       console.log('\u001b[1;32m RESPONSE_FETCH ::: ', res);
       return res;
