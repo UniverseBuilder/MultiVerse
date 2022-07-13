@@ -1,5 +1,11 @@
 import React from 'react';
 
-export const Card = () => {
-  return <div>Card</div>;
+import PropTypes from 'prop-types';
+
+export const Card = ({ children }) => {
+  return <div className="card">{children}</div>;
+};
+
+Card.propTypes = {
+  children: PropTypes.node.isRequired,
 };
