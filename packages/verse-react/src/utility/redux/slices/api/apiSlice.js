@@ -72,7 +72,7 @@ export const useApi = model => {
 export const useApiState = (model, defaultValue = {}) => {
   return useSelector(
     state =>
-      state.api?.[model] || { [model]: defaultValue, error: {}, loading: false }
+      state.api?.[model] || defaultValue
   );
 };
 
