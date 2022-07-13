@@ -40,7 +40,7 @@ export const apiSlice = createSlice({
         ...state,
         ...{
           [action.meta.arg.model]: {
-            [action.meta.arg.model]: {},
+            [action.meta.arg.model]: null,
             error: {},
             loading: true,
           },
@@ -52,7 +52,7 @@ export const apiSlice = createSlice({
         ...state,
         ...{
           [action.meta.arg.model]: {
-            [action.meta.arg.model]: {},
+            [action.meta.arg.model]: null,
             error: action.error,
             loading: false,
           },
