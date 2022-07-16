@@ -18,7 +18,7 @@ const readFile = async (file, fileNo, format) => {
       }
     };
     reader.onerror = reject;
-    reader.readAsDataURL(file);
+    reader.readAsText(file);
   });
 };
 
