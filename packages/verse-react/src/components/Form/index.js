@@ -9,6 +9,7 @@ import { RadioGroup } from './RadioGroup';
 import { Radio } from './RadioGroup/Radio';
 import { Select } from './Select';
 import { TextArea } from './TextArea';
+import { UploadFile, UploadFolder } from './Upload';
 
 Form.Label = Label;
 Form.Input = Input;
@@ -20,5 +21,7 @@ Form.RadioGroup = RadioGroup;
 Form.Radio = Radio;
 Form.Wrapper = Wrapper;
 Form.Dropdown = Dropdown;
+Form.UploadFile = UploadFile;
+Form.UploadFolder = UploadFolder;
 
 export { Form };

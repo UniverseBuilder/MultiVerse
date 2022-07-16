@@ -40,6 +40,8 @@ export const FormDocs = () => {
           />
           <Form.Label>Datepicker</Form.Label>
           <Form.Datepicker model="datepicker" />
+          <Form.UploadFile model="uploadfile" placeholder="Select" />
+          <Form.UploadFolder model="uploadfolder" placeholder="Select" />
         </Form.Wrapper>
         <Form.Wrapper className="flex-45">
           <For each="value" index="idx" of={Object.keys(form)}>

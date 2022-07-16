@@ -62,3 +62,11 @@
     $i: $i + $offset;
   }
 }
+
+@mixin display($display: block) {
+  display: $display;
+}
+
+@mixin textAlign($align: block) {
+  text-align: $align;
+}
